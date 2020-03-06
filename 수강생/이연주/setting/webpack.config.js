@@ -25,4 +25,3 @@
             contentBase: './dist'
         }
     }
-}
