@@ -11,10 +11,10 @@ export default class App extends React.Component{
         console.log('component did mount')
     }
     componentDidUpdate(){
-        console.log('update');
+        console.log('update!');
     }
     incresement(){
-        this.setState({ count:this.state.count + 1});
+        this.setState({ count:this.state.count });
     }
     decresement(){
         this.setState({ count:this.state.count - 1});
