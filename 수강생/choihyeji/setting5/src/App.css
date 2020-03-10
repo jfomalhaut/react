@@ -1,0 +1,20 @@
+h2 {
+    color: darkorange;
+}
+
+button {
+    all:unset;
+    background-color: darkgray;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: darkorange;
+}
+button:active {
+    transform: scale(0.98);
+}
