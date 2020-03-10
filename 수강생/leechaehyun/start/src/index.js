@@ -7,3 +7,4 @@ import Hero from '../components/Hero';
 // import './index.css';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
+

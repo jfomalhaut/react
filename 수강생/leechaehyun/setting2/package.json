@@ -10,6 +10,12 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "babel": {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ]
+    },
     "devDependencies": {
       "@babel/core": "^7.8.7",
       "@babel/preset-env": "^7.8.7",
