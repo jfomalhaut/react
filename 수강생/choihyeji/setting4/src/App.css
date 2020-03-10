@@ -1,0 +1,6 @@
+h2 {
+    color: tomato;
+}
+h2:nth-child(2) {
+    color: royalblue;
+}
