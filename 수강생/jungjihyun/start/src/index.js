@@ -5,4 +5,4 @@ import Hero from './components/Hero';
 // import './index.css';
 // import App from './App';
 
-ReactDOM.render(<Hreo/>, document.getElementById('root'));
+ReactDOM.render(<Hero/>, document.getElementById('root'));
