@@ -1,0 +1,19 @@
+<html>
+<head></head>
+<body>
+	<script>
+		const obj = {
+			prop: 'Hello',
+			sayHello: function(){
+				console.log(this.prop);
+			}
+		};
+
+		// obj.sayHello();
+
+		const result = obj.sayHello.bind(obj);
+		result();
+
+	</script>
+</body>
+</html>
