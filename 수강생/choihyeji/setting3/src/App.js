@@ -13,12 +13,13 @@ export default class App extends React.Component {
         this.decresement = this.decresement.bind(this);
         this.multiple = this.multiple.bind(this);
     }
+
     componentDidMount() {
-        console.log('component did mount'); // 처음 켰을 때 한번만 작동
+        console.log('component did mount');
     }
-    
+
     componentDidUpdate() {
-        console.log('update!'); // 값이 변경될 때 마다 작동 (실시간으로)
+        console.log('Update!');
     }
 
     incresement() {
@@ -26,7 +27,7 @@ export default class App extends React.Component {
     }
 
     decresement() {
-        this.setState({ count: this.state.count - 1});
+        this.setState({ count: this.state.count -1});
     }
 
     multiple() {
@@ -41,8 +42,8 @@ export default class App extends React.Component {
                 <h2>{this.state.count2}</h2>
                 <button onClick={this.incresement}>증가</button>
                 <button onClick={this.decresement}>감소</button>
-                <button onClick={this.multiple}>2배</button>
+                <button onClick={this.multiple}>따블</button>
             </div>
-        );
+        )
     }
-};
+}
