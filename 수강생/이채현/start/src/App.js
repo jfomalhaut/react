@@ -1,18 +1,23 @@
 import React from 'react';
+import './App.css';
 
 export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            count: 10
+            count: 10,
+            count2: 1
         }
+        this.incresement = this.incresement.bind(this);
+        this.decresement = this.decresement.bind(this);
+        this.multiply = this.multiply.bind(this);
     }
     componentDidMount() {
         console.log('component did mount');
     }
 
     componentDidUpdate() {
-        console.log('update!');
+        console.log('update!');  //변경될 때마다 실행 
     }
 
     incresement() {
@@ -23,13 +28,18 @@ export default class App extends React.Component {
         this.setState({ count: this.state.count - 1});
     }
 
+    multiply() {
+        this.setState({ count2: this.state.count2 * 2});
+    }
     render() {
         return (
             <div className="container">
                 <h1>App Component</h1>
                 <h2>{this.state.count}</h2>
+                <h2>{this.state.count2}</h2>
                 <button onClick={this.incresement}>증가</button>
                 <button onClick={this.decresement}>감소</button>
+                <button onClick={this.multiply}>곱하기</button>
             </div>
         );
     }
