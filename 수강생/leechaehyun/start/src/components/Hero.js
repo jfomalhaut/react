@@ -4,7 +4,7 @@ const Hero = () => {
     //useState(초기값)
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(100);
-    const [count3, setCount3] = useState(1);
+    // const [count3, setCount3] = useState(1);
 
     //function increasement(){} 와 같은 방식
     const increasement = () => {
