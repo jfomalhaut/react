@@ -10,7 +10,7 @@ export default class App extends React.Component {
         }
         this.incresement = this.incresement.bind(this);
         this.decresement = this.decresement.bind(this);
-        this.multiply = this.multiply.bind(this);
+        this.multiple = this.multiple.bind(this);
     }
     componentDidMount() {
         console.log('component did mount');

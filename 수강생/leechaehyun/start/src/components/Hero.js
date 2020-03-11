@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Hero = () => {
     //useState(초기값)
     const [count, setCount] = useState(0);
-    const [count2, setCount2] = useState(100);
-    // const [count3, setCount3] = useState(1);
+    const [count2, setCount2] = useState(0);
+    const [count3, setCount3] = useState(10);
 
     //function increasement(){} 와 같은 방식
     const increasement = () => {
@@ -12,11 +12,11 @@ const Hero = () => {
     }
 
     const decreasement = () => {
-        setCount(count2 - 1);
+        setCount2(count2 - 1);
     }
 
     const multiple = () => {
-        setCount(count * 2);
+        setCount3(count3 * 2);
     }
 
     return (
