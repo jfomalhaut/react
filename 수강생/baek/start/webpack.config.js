@@ -1,3 +1,4 @@
+
 module.exports = {
 	entry: [
 		"./src/index.js"
@@ -20,8 +21,8 @@ module.exports = {
 			}
 		]
 	},
-	resolve:{
-		extensions: ['*','.js','jsx']
+	resolve: {
+		extensions: ['*', '.js', 'jsx']
 	},
 	output: {
 		path: __dirname + '/dist',

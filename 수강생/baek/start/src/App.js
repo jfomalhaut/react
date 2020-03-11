@@ -1,43 +1,46 @@
 import React from 'react';
 
-export default class App extends React.Component{
-    constructor(){
-        super();
-        this.state={
-            count:10,
-            count2:1
-        };
 
-        this.incresement = this.incresement.bind(this);
-        this.decresement = this.decresement.bind(this);
-        this.two = this.two.bind(this);
+export default class App extends React.Component{
+    constructor() {
+        super();
+        this.state = {
+            count:10,
+            count2:1,
+        };
+        
+
+        this.increasement = this.increasement.bind(this);
+        this.decreasement = this.decreasement.bind(this);
+        this.multiple = this.multiple.bind(this);
+
     }
-    componentDidMount(){
-        console.log('component did mount')
+    componentDidCatch(){
+        console.log('component did mount');
     }
     componentDidUpdate(){
         console.log('update!');
     }
-    incresement(){
-        this.setState({ count:this.state.count + 1});
+    increasement() {
+        this.setState({ count: this.state.count + 1});
     }
-    decresement(){
+    decreasement() {
         this.setState({ count:this.state.count - 1});
     }
-    two(){
-        this.setState({ count2:this.state.count2 * 2});
+    multiple() {
+        this.setState({ count2:this.state.count2 *2});
     }
-    render(){
-        return(
+    render() {
+        return (
             <div className="container">
                 <h1>App Component</h1>
                 <h2>{this.state.count}</h2>
-                <h2>{this.state.count2}</h2>
+                <h3>{this.state.count2}</h3>
 
-                <button onClick={this.incresement}>증가 </button>
-                <button onClick={this.decresement}>감소 </button>
-                <button onClick={this.two}>곱하기</button>
+                <button onClick={this.increasement}>증가</button>
+                <button onClick={this.decreasement}>감소</button>
+                <button onClick={this.multiple}>곱하기</button>
             </div>
-        );
+        )
     }
-};
+}

@@ -1,17 +1,31 @@
 import React, { useState } from 'react';
 
-function hero(){
+const Hero =() =>{
     const [count, setCount] = useState(0);
+    const [count2, setCount2] = useState(100);
+
     const increasement =() =>{
         setCount(count + 1);
     };
+ 
+    const decreasement = () =>{
+        setCount2(count2 - 1);
+    };
+
+    const multiple =() =>{
+        setCount2(count2 * 2);
+    };
+
     return(
         <div>
-            <h1>i'm hero</h1>
+            <h1>I'm Hero</h1>
             <h2>{count}</h2>
+            <h2>{count2}</h2>
             <button onClick={increasement}>증가</button>
+            <button onClick={decreasement}>감소</button>
+            <button onClick={multiple}>곱하기</button>
         </div>
     );
 };
 
-export default hero;
+export default Hero;
