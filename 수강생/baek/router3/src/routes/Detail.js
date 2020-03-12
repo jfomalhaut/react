@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Detail = () => {
-    return(
-        <h1>Hello Detail</h1>
-    );
+const Detail = ({ match }) => {
+	return (
+		<h1>{match.params.id}</h1>
+	);
 };
+
 export default Detail;
