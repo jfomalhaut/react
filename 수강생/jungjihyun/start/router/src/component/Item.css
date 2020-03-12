@@ -1,0 +1,14 @@
+.item{
+    width: 100%;
+    background: gray;
+    height: 200px;
+    line-height: 200px;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+.item:hover{
+    background: orange;
+}
