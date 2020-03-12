@@ -1,14 +1,10 @@
 import React from 'react';
 import './Item.css';
 
-const Item = ({ id, name, onClickHandler }) => {
-
-	const sendIdDetail = () => {
-		onClickHandler(id);
-	};
+const Item = ({ id, name, onClickHandler, onClickHandler2 }) => {
 
 	return (
-		<div className="item" onClick={sendIdDetail}>
+		<div className="item" onClick={() => onClickHandler2(name)}>
 			{name}
 		</div>
 	);
