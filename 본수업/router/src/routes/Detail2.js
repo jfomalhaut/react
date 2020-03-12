@@ -1,8 +1,15 @@
 import React from 'react';
+import imageURI from '../globals/imageURI';
 
 const Detail2 = ({ match }) => {
+	const {
+		params: {
+			src
+		}
+	} = match;
+
 	return (
-		<div>{match.params.name2}</div>
+		<img src={`${imageURI[src]}`} />
 	);
 };
 

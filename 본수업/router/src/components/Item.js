@@ -1,11 +1,13 @@
 import React from 'react';
 import './Item.css';
+import imageURI from '../globals/imageURI';
 
-const Item = ({ id, name, onClickHandler, onClickHandler2 }) => {
-
+const Item = ({ item: { id, name, src }, onClickHandler, onClickHandler2 }) => {
+	
 	return (
-		<div className="item" onClick={() => onClickHandler2(name)}>
+		<div className="item" onClick={() => onClickHandler2(src)}>
 			{name}
+			<img src={`${imageURI[src]}`} />
 		</div>
 	);
 };

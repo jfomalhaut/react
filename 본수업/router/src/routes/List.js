@@ -19,14 +19,14 @@ const List = ({ history }) => {
 		history.push(`/detail/${id}`);
 	};
 
-	const goDetail2 = name => {
-		history.push(`/detail2/${name}`);
+	const goDetail2 = src => {
+		history.push(`/detail2/${src}`);
 	};
 
 	return (
 		<div className="container">
 			{items.map((item, index) => (
-				<Item key={`ITEM${item.id}`} id={item.id} name={item.name} onClickHandler={goDetail} onClickHandler2={goDetail2} />
+				<Item key={`ITEM${item.id}`} item={item} onClickHandler={goDetail} onClickHandler2={goDetail2} />
 			))}
 		</div>
 	);
