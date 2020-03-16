@@ -15,7 +15,8 @@ const App = () => {
                 <Route path="/" exact={true} component={Home}/>
                 <Route path="/list" component={List}/>
                 <Route path="/detail/:id" component={Detail}/>
-                <Route path="/detail2/:name" component={Detail2}/>
+                {/* <Route path="/detail2/:name" component={Detail2}/> */}
+                <Route path="/detail2/:src" component={Detail2}/>
                 <Redirect path="*" to="/"/>
             </Switch>
         </BrowserRouter>
