@@ -1,0 +1,11 @@
+.item{
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+}
+.item img{
+    width: 100%;
+}
