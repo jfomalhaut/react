@@ -12,11 +12,11 @@ const Hero = () => {
     }
 
     const decreasement = () => {
-        setCount(count2 - 1);
+        setCount2(count2 - 1);
     }
 
     const multiple = () => {
-        setCount(count * 2);
+        setCount3(count3 * 2);
     }
 
     return (
