@@ -6,7 +6,7 @@ const Hero = () => {
     const increasement = () => {
         setCount(count + 1);
     };
-    const decresement = () => {
+    const decreasement = () => {
         setCount(count -1);
     };
     const multiple = () => {
@@ -18,7 +18,7 @@ const Hero = () => {
             <h2>{count}</h2>
             <h2>{count2}</h2>
             <button onClick={increasement}>증가</button>
-            <button onClick={decresement}>감소</button>
+            <button onClick={decreasement}>감소</button>
             <button onClick={multiple}>따블</button>
         </div>
     );
