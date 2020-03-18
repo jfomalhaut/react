@@ -22,13 +22,13 @@ const List = () => {
 		}
 	};
 
-	const transType = type => {
-        switch(type){
-            case 1: return '수산물';
-            case 2: return '청과';
-            case 3: return '야채';
-        }
-    }; 
+	// const transType = type => {
+    //     switch(type){
+    //         case 1: return '수산물';
+    //         case 2: return '청과';
+    //         case 3: return '야채';
+    //     }
+    // }; 
 
 	const offLoading = () => {
 		setTimeout(() => {
@@ -42,7 +42,7 @@ const List = () => {
 
 	useEffect(() => {
 		setView(ITEMS);
-		offLoading();
+		// offLoading();
 	}, []);
 
 	return (
@@ -65,7 +65,7 @@ const List = () => {
 						<Item item={item} key={`item${item.id}`}/>
 					))}
 				</div>
-			)}
+			)};
 		</div>
 	);
 };
