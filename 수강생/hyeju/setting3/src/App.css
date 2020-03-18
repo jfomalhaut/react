@@ -1,0 +1,38 @@
+.header{
+    width: 1050px;
+    margin: 0 auto;
+    display: block;
+}
+
+.h_top{
+    display: flex;
+    justify-content: space-between;
+    height: 37px;
+    line-height: 37px;
+}
+
+.ht_del{
+    width: 163px;
+    height: 22px;
+    margin-top: 8px;
+}
+
+.ht_menu{
+    display: flex;
+    height: 37px;
+    font-size: 12px;
+}
+
+.ht_li{
+    padding: 0 10px;
+}
+
+.logo{
+    background-image: url("./index_img/market_logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 103px;
+    height: 79px;
+    margin: 0 auto;
+    margin-top: -10px;
+}

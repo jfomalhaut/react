@@ -4,7 +4,7 @@ import Home from './routes/Home';
 import List from './routes/List';
 import Detail from './routes/Detail';
 import Detail2 from './routes/Detail2';
-import Navigation from './cpmponent/Navigation';
+import Navigation from './component/Navigation';
 
 
 const App = () => {
