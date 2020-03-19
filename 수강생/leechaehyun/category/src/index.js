@@ -5,4 +5,4 @@ import List from './routers/List';
 
 
 
-ReactDOM.render(<List/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

@@ -4,12 +4,21 @@ import CATEGORY from '../jsons/category.json';
 import './List.css';
 import Item from '../components/Item';
 
-const List = () => {
+const List2 = ({ history, match: { params: {category}} }) => {
+    console.log(category);
 	const [view, setView] = useState([]);
 	const [onType, setOnType] = useState(0);
-	const [isLoading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(true);
 
-	const sortItem = (_id) => {
+	const sortItem = (cate) => {
+        let _id = 0;
+        switch (cate) {
+            case 'all': _id = 0; break;
+            case 'fish': _id = 1; break;
+            case 'fruit': _id = 2; break;
+            case 'vagetable': _id = 3; break;
+        }
+
 		setOnType(_id);
 		
 		if (_id === 0) { // 전체보기
@@ -22,29 +31,28 @@ const List = () => {
 		}
 	};
 
-	// const transType = type => {
-    //     switch(type){
-    //         case 1: return '수산물';
-    //         case 2: return '청과';
-    //         case 3: return '야채';
-    //     }
-    // }; 
+    const navigate = value => {
+        // console.log(value);
+        history.push(`/${value}`);
+    };
 
 	const offLoading = () => {
 		setTimeout(() => {
 			setLoading(false);
 		}, 400);
-	};
+    };
+    
+    useEffect(() =>{
+        // console.log(category);
+        sortItem(category);
+    }, [category]);
 
 	useEffect(() => {
 		setLoading(true);
 		offLoading();
 	}, [onType]);
 
-	useEffect(() => {
-		setView(ITEMS);
-		// offLoading();
-	}, []);
+
 
 	return (
 		<div className="container">
@@ -52,7 +60,7 @@ const List = () => {
 				{CATEGORY.map(item => (
 					<li className={`label ${onType === item.id ? 'active' : ''}`} 
 					key={`category${item.id}`} 
-					onClick={() => sortItem(item.id)}
+					onClick={() => navigate(item.path)}
 					>
 						{item.label}
 					</li>
@@ -71,4 +79,4 @@ const List = () => {
 	);
 };
 
-export default List;
+export default List2;
