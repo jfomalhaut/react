@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Card = ({idx : {name, age, phone}}) =>{
-   
+   const delHandler = idx => {
+
+   }
 
     return(
         <div className="card" key={`CARD${idx}`}>
@@ -11,7 +13,7 @@ const Card = ({idx : {name, age, phone}}) =>{
                 <div className="phone">전화번호 : {phone}</div>
             </div>
             <div className="delete">
-                <button onClick={ delHandler =>onDelete(idx)}>삭제</button>
+                <button onClick={ delHandler => onDelete(idx)}>삭제</button>
             </div>
         </div>
     );
