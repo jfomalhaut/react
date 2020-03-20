@@ -1,0 +1,40 @@
+.container{
+	width: 500px;
+	margin: 50px auto;
+}
+.inputForm{
+	display: flex;
+	padding: 20px 0;
+	border-bottom: 1px solid #ddd;
+}
+.left{
+	flex: 1;
+	box-sizing: border-box;
+}
+.left .field{
+	padding: 5px;
+}
+.left .field input{
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 20px;
+	outline: none;
+	width: 100%;
+}
+.right{
+	width: 200px;
+	display: flex;
+	justify-content: center;
+}
+.right button{
+	background-color: #0071B3;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 0 20px;
+	height: 60px;
+	align-self: center;
+}
+.right button:active{
+	background-color: rgb(11, 78, 117);
+}
