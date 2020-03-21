@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Input.css';
 import Card from '../components/Card';
+import './Input.css';
 
 const Input2 = () => {
 	const [phoneBook, setPhoneBook] = useState([]);
