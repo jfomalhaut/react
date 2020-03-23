@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import './Input.css';
+import Card2 from '../components/Card2';
 
 const Input2 = () => {
 	const [phoneBook, setPhoneBook] = useState([]);
@@ -66,14 +67,14 @@ const Input2 = () => {
 				</div>
 			</div>
 			<div className="list">
-				{phoneBook.length === 0 ? (
-					<div className="none">리스트가 존재하지 않습니다</div>
-				) : (
-					phoneBook.map((item, index) => <Card key={`CARD${index}`} index={index} item={item} onDelete={onDelete} />)
-				)}
+				{phoneBook.map((item, index) => (
+					<Card2 onDelete={onDelete} index={index} goods={item} key={`CARD${index}`} />
+				))}
 			</div>
 		</div>
 	);
 };
 
 export default Input2;
+
+// onDelete
