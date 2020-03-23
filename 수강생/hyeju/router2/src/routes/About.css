@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.hi{
+    font-size: 32px;
+    font-weight: bold;
+    width: 600px;
+    background: aquamarine;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 25px;
+    margin-bottom: -10px;
+}
+.container{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    background: aquamarine;
+    padding: 25px 30px;;
+}
