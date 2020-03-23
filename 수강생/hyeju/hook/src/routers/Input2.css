@@ -1,0 +1,42 @@
+*{box-sizing: border-box;}
+
+.container1{ margin-top: 40px; }
+
+.inputform{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 atuo;
+    background: #eeeeee;
+    width: 400px;
+    padding: 20px 30px;
+    margin: 0 auto;
+}
+
+input{
+    width: 220px;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 13px;
+    outline: none;
+}
+
+.field{
+    margin-bottom: 6px;
+}
+
+.right{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    background: black;
+    color: white;
+    margin-left: 20px;
+    font-size: 15px;
+    outline: none;
+}
