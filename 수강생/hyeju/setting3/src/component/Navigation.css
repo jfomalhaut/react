@@ -1,0 +1,54 @@
+*{text-decoration: none; }
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 55px;
+}
+
+.menu_t{
+    flex-grow: 1;
+    display: flex;
+}
+
+.menu_t li{
+    width: calc(100% / 5);
+    text-align: center;
+}
+
+.menu_li :first-child {
+    position : relative;
+}
+
+.menu_li :first-child ::before {
+    border: 1px soild;
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    background-image: url("../index_img/ico_gnb_all_off.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: calc(50% - 8px);
+    left: calc(50% - 7px);
+
+}
+.searchbar{
+    width: 238px;
+    height: 36px;
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 12px;
+    padding: 0 20px;
+}
+
+.cart{
+    background-image: url("../index_img/ico_cart_x2_v2.jpg");
+    background-repeat: no;
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin-left: 16px;
+}

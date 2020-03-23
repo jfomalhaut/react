@@ -1,0 +1,31 @@
+<html>
+<head></head>
+<body>
+	<button onclick="List()">
+		<h1>List 시작</h1>
+	</button>
+	<script>
+
+		function List() {
+			const data = {
+				name: '이건희',
+				job: '부자',
+				child : {
+					first: '이재용',
+					second: '이부진'
+				}
+			};
+			Item(data);
+		}
+
+		function Item({ name, job, child: { first, second } }) {
+			const html = `
+				<div class="item">
+					<div class="img color${type}"
+				</div>
+			`;
+		}
+
+	</script>
+</body>
+</html>
