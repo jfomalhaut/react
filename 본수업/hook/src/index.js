@@ -3,5 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Input from './routers/Input';
 import Input2 from './routers/Input2';
+import Method from './routers/Method';
+import List from './routers/List';
 
-ReactDOM.render(<Input2/>, document.getElementById('root'));
+ReactDOM.render(<List/>, document.getElementById('root'));

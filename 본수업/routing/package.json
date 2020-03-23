@@ -1,5 +1,5 @@
 {
-  "name": "hook",
+  "name": "routing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -31,7 +31,6 @@
   "dependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2"
   }
 }
