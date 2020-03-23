@@ -11,7 +11,6 @@ const List = () =>{
 
     const sortItem= (_id) => {
         setOnType(_id);
-        setLoading(true);
         if (_id === 0) {
             setView(ITEMS);
         } else {
@@ -30,6 +29,7 @@ const List = () =>{
     };
 
     useEffect(() => {
+        setLoading(true);
         offLoading();
     }, [onType]);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, BrowNavLink } from 'react-router-dom';
 import Navigation from './component/Navigation';
-import './App.css';
+// import './App.css';
 
 
 const App = () => {
