@@ -7,11 +7,20 @@ const Home = ( { history } ) => {
     const onChangeName = event => {
         const { target : { value } } = event;
         setName(value);
+<<<<<<< HEAD
+        console.log(name);
+    };
+
+    const goAbout = value => {
+        history.push(`/about/${value}`);
+        // console.log(value);
+=======
     };
 
     const goAbout = value => {
         history.push(`/about/${name}`);
         console.log(value);
+>>>>>>> a1b84869f3a3d1085eec44f7456718a1176c32f1
     };
 
     return (
