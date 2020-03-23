@@ -4,15 +4,24 @@ import CATEGORY from '../jsons/category.json';
 import Item from '../components/Item';
 import './List.css';
 
-const List = () => {
-    console.log(ITEMS);
+const List2 = ({ history, match: { params: { category }} }) => {
+    // console.log(ITEMS);
     const [view, setView] = useState([]);
     const [onType, setOnType] = useState(0);
     const [isLoading, setLoading] = useState(true);
 
-    const sortItem = (_id) => {
+    console.log(category);
+
+    const sortItem = (cate) => {
+        let _id = 0;
+        switch (cate) {
+            case 'all': _id = 0; break;
+            case 'fish': _id = 1; break;
+            case 'fruit': _id = 2; break;
+            case 'vegetable': _id = 3; break;
+        }
+        
         setOnType(_id);
-        // setLoading(true);
         if (_id === 0) { //전체보기
             setView(ITEMS);
         } else { // 1. 수산물, 2. 청과, 3.채소
@@ -22,6 +31,10 @@ const List = () => {
 
             setView(sort);
         }
+    };
+
+    const navigate = value => {
+        history.push(`/${value}`);
     };
 
     // const transType = type => {
@@ -39,13 +52,17 @@ const List = () => {
     };
 
     useEffect(() => {
+        sortItem(category);
+    }, [category]);
+
+    useEffect(() => {
         setLoading(true);
         offLoading();
     }, [onType]);
 
-    useEffect(() => {
-        setView(ITEMS);
-    }, []);
+    // useEffect(() => {
+    //     setView(ITEMS);
+    // }, []);
 
     return (
         <div className="container">
@@ -54,7 +71,7 @@ const List = () => {
                     <li 
                         className={`label ${onType === item.id ? 'active' : ''}`}
                         key={`category${item.id}`} 
-                        onClick={() => sortItem(item.id)}
+                        onClick={() => navigate(item.path)}
                     >
                         {item.label}
                     </li>
@@ -74,4 +91,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default List2;

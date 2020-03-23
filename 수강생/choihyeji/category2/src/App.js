@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import List2 from './routers/List2';
+import List from './routers/List';
 
 const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/:category" component={List2} />
+                <Route exact path="/:category" component={List} />
                 <Redirect path="*" to="/all" />
             </Switch>
         </BrowserRouter>

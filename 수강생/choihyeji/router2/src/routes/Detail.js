@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const Detail = () => {
+const Detail = ({ match }) => {
     return (
-        <h1>Detail Component</h1>
+        <h1>{match.params.id}</h1>
     );
 };
 
