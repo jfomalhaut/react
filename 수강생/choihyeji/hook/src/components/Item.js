@@ -10,7 +10,7 @@ const Item = ({ item: { name, price, src }}) => {
             <img src={src}/>
             <div className="info">
                 <div className="name">{name}</div>
-                <div className="price">{price}</div>
+                <div className="price">{price}원</div>
             </div>
         </div>
     );

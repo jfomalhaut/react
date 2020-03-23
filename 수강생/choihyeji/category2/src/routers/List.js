@@ -2,7 +2,10 @@ import React from 'react';
 
 const List = () => {
     return (
-        <h1>wd</h1>
+        <div container="container">
+            <ul className="header">
+            </ul>
+        </div>
     );
 };
 
