@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ onDelete, index, item: { name, age, number } }) => {
+const Card2 = ({ goods: { name, age, number }, index, onDelete }) => {
     return (
         <div key={`CARD${index}`} className="card">
             <div className="info">
@@ -15,4 +15,4 @@ const Card = ({ onDelete, index, item: { name, age, number } }) => {
     );
 };
 
-export default Card;
+export default Card2;

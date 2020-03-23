@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../components/Card';
+// import Card from '../components/Card';
+import Card2 from '../components/Card2';
 
 const Input2 = () => {
     
@@ -24,6 +25,11 @@ const Input2 = () => {
     };
 
     const onInsert = () => {
+        if(name === '' || age === '' || number === '') {
+            alert('제대로 입력하세요');
+            return;
+        }
+        
         const data = {
             name, //name: name;처럼 이름이 같을 때 가능하다
             age,
@@ -37,13 +43,13 @@ const Input2 = () => {
         setNumber('');
     };
 
-    // const onDelete = _index => {
-    //     const afterPhoneBook = phoneBook.filter((item, index) => {
-    //         return index !== _index;
-    //     });
+    const onDelete = _index => {
+        const afterPhoneBook = phoneBook.filter((item, index) => {
+            return index !== _index;
+        });
 
-    //     setPhoneBook(afterPhoneBook);
-    // };
+        setPhoneBook(afterPhoneBook);
+    };
 
     useEffect(() => {
         console.log(phoneBook);
@@ -70,7 +76,7 @@ const Input2 = () => {
             </div>
             <div className="list">
                 {phoneBook.map((item, index) => (
-                    <Card />
+                    <Card2 goods={item} index={index} onDelete={onDelete} key={`CARD${index}`} />
                 ))}
             </div>
         </div>
