@@ -62,7 +62,7 @@ const Input2 = () => {
             </div>
             <div className="list">
              {phoneBook.map((item, idx) =>(
-                 <Card item={idx}/>
+                 <Card idx={item}/>
             ))}
             </div>
         </div>
