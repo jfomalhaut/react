@@ -1,110 +1,65 @@
-<<<<<<< HEAD
-import React, { useState, useRef } from 'react'
-import Card from '../components/Card';
-
+import React, { useState } from 'react'
+import Card2 from '../components/Card2';
 
 const Input = () => {
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const [tel, setTel] = useState('');
-    const [phoneBook ,setbk] = useState([]);
-    const onElementFocus = useRef();
+    const [name, setName]= useState('');
+    const [age, setAge]= useState('');
+    const [tel, setTel]= useState('');
+    const [phonebook, setph]= useState([]);
 
-    const onName = event =>{
-        const {target : {value}} = event;
+    const onName = ev =>{
+        const {target : {value}}= ev;
         setName(value);
     };
-    
-    const onAge = event =>{
-        const {target : {value}} = event;
+    const onAge = ev =>{
+        const {target : {value}}= ev;
         setAge(value);
     };
-    
-    const onTel = event =>{
-        const {target : {value}} = event;
+    const onTel = ev =>{
+        const {target : {value}}= ev;
         setTel(value);
     };
-    
-    const onInsert = () =>{
-        const data = {name, age, tel};
-        const setDate = phoneBook.concat(data);
-        setbk(setDate);
+
+    const onInsert = () => { 
+        const phList = { name, age, tel }; 
+        const nextph = phoneBook.concat(phList);
+        setph(nextph);
         setName('');
         setAge('');
         setTel('');
-        onElementFocus.current.focus();
-        if(data.value===''){
-            onInsert();
-        }
     };
-
+    
     const onEnter = event =>{
         if(event.key === "Enter"){
             onInsert();
         }
     };
 
-    const onDel = _idx =>{
-        const afterPh = (phoneBook.filter((item, index)=> {
-            return index !== _idx
-        }));
-        setbk(afterPh);
-    }
-    
+    const onDel = _idx => {
+        const afterPhBook = (phonebook.filter((item, idx)=> {
+                return (_idx !== idx)
+        }))
+        setph(afterPhBook);
+    };
+
 
     return(
         <div className="container">
             <div className="inputWrap">
                 <div className="left">
-                    <input value={name} ref={onElementFocus} onChange={onName} onKeyPress={onEnter} placeholder="이름"/>
-                    <input value={age} onChange={onAge} onKeyPress={onEnter} placeholder="나이"/>
-                    <input value={tel} onChange={onTel} onKeyPress={onEnter} placeholder="번호"/>
+                    <input value={name} onKeyPress={onEnter} onChange={onName} placeholder="이름"/> 
+                    <input value={age} onChange={onAge} placeholder="나이"/> 
+                    <input value={tel} onChange={onTel} placeholder="번호"/> 
                 </div>
-                <div>
+                <div className="right">
                     <button onClick={onInsert}>입력</button>
                 </div>
             </div>
             <div className="listWrap">
-                {phoneBook.map((item, index)=> (
-                    <Card item={item} idx={index} onDelete={onDel} key={`${item.index}`}/>
-                ))}
+                {phonebook.map((item, index)=>
+                (<Card2 onDel = {onDel} index = {index} goods = {item} key={`CARD${index}`}/>)
+                )}
             </div>
-=======
-import React, { useState } from 'react'
-
-const Input = () => {
-    const [data, setData] = useState('');
-    const [list, setList] = useState([]);
-
-    const handler = event =>{
-        const {target:{value}} = event;
-        setData(parseInt(value));
-
-    }
-
-    const onInsert = () =>{
-        const nextList = list.concat(data);
-        setList(nextList);
-        setData('');
-        inputElement.current.focus();
-    }
-    const onEnter = event =>{
-        if(event.key === 'Enter'){
-            onInsert();
-        }
-    }
-
-
-    return (
-        <div>
-        <input ref={inputElement} onKeyPress={onEnter} value={data} onChange={handler} placeholder="new"/>
-        <button onClick={onInsert}>입력</button>
-        <ul>
-            {list.map((item ,idx)=>(
-                <li key={idx}>{item}</li>
-            ))}
-        </ul>
->>>>>>> d51b4a17820a035ddf348e6f5c84957d16eb4d56
         </div>
     );
 };
