@@ -11,11 +11,12 @@ const Detail = ({index ,item:{src, name, price}}) => {
             </div>
             <div className="imgBox">
                 <img src={src}/>
+                <div className="imgTxt">
+                    <div className="name">{name}</div>
+                    <div className="price">{price}원</div>
+                </div>
             </div>
-            <div className="imgTxt">
-                <div className="name">{name}</div>
-                <div className="price">{price}원</div>
-            </div>
+            
         </div>
     );
 };
