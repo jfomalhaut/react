@@ -12,7 +12,6 @@ const List = () => {
     const sortItem = (_id) => {
         // console.log(_id);
         setOnType(_id); //눌러서 id값 불러오기
-        setLoading(true); //type 바뀔때마다, 클릭할때마다 loading 작동
 
         if (_id === 0) { //전체보기
             setView(ITEMS);
@@ -39,6 +38,7 @@ const List = () => {
     }; //0.4초마다 setLoading을 꺼주기
 
     useEffect(() => {
+        setLoading(true); //type 바뀔때마다, 클릭할때마다 loading 작동
         offLoading();
     }, [onType]); //type이 바뀔때마다 꺼짐을 작동해라
 
