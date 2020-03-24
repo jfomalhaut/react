@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../component/Card';
+import Card2 from '../component/Card2';
 import './Input2.css';
 
 const Input2 = () => {
@@ -22,19 +22,19 @@ const Input2 = () => {
     };
     const onInsert = () => {
         const data = {name,age,tel};
-        const all = phoneBook.concat(data);
+        const all = phoneBook.concat(data).reverse();
         setPhoneBook(all);
         setName('');
         setAge('');
         setTel('');
     };
 
-    // const onDelete = _index => {
-    //     const afterPhoneBook = phoneBook.filter((item, index) => {
-    //         return index !== _index;
-    //     });
-    //     setPhoneBook(afterPhoneBook);
-    // };
+    const onDelete = _index => {
+        const afterPhoneBook = phoneBook.filter((item, index) => {
+            return index !== _index;
+        }).reverse();//역순으로 만드는법
+        setPhoneBook(afterPhoneBook);
+    };
 
     //실시간 체크
     useEffect(() => {
@@ -61,7 +61,7 @@ const Input2 = () => {
             </div>
             <div className="list">
                 {phoneBook.map((item, index) => (
-                    <Card item={index}/>
+                    <Card2 goodes={item} index={index} key={`CARD${index}`} onDelete={onDelete}/>
                 ))}
             </div>
        </div>
