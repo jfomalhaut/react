@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Setting = () =>{
+const Setting = ({match : {params : {data}}}) =>{
     return(
-        <h1></h1>
+        <h1>{data}</h1>
     );
 };
 

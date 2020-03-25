@@ -1,11 +1,16 @@
 import React from 'react'
 
 
-const About = () =>{
+const About = ({match:{params : {data }}}) =>{
+    // match:{
+    //     params : 
+    //         src
+    // }
     return(
-        <div className="aData">
-            <input value={aData} onChange={onAData} sendInput={onAData}/>
+        <div className="Data">
+        <h1>{data}</h1>
         </div>
+
     );
 };
 
