@@ -12,7 +12,7 @@ const List = () => {
 
     const sortItem = (_id) => {
         setOnType(_id);
-        setLoading(true);
+        // setLoading(true);
         if (_id === 0) { //전체보기
             setView(ITEMS);
         } else { // 1. 수산물, 2. 청과, 3.채소
@@ -39,12 +39,12 @@ const List = () => {
     };
 
     useEffect(() => {
+        setLoading(true);
         offLoading();
     }, [onType]);
 
     useEffect(() => {
         setView(ITEMS);
-        offLoading();
     }, []);
 
     return (

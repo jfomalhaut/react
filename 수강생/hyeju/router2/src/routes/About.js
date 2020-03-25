@@ -9,13 +9,8 @@ const About = ({ match, history}) => {
         setAge(value);
     }
 
-<<<<<<< HEAD
     const goSetting = () => {
         history.push(`/setting/${age}`);
-=======
-    const goSetting = value => {
-        history.push(`/setting/{value}`);
->>>>>>> 1f5b9b9a6fdeff09d01ade068d8e35114d0e9832
     }
 
 

@@ -9,15 +9,9 @@ const Home = ( { history } ) => {
         setName(value);
     };
 
-<<<<<<< HEAD
     const goAbout = () => {
         history.push(`/about/${name}`);
         console.log(name);
-=======
-    const goAbout = value => {
-        history.push(`/about/${name}`);
-        console.log(value);
->>>>>>> 1f5b9b9a6fdeff09d01ade068d8e35114d0e9832
     };
 
     return (
