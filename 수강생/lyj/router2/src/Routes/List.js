@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from './components.item';
+import Item from '../components/item';
 import './List.css';
 
 const List = ({ history }) => {
@@ -14,14 +14,18 @@ const List = ({ history }) => {
         {id: 8, name: 'item8', src: 'meat8'}
     ];
     
-    const goDetail = id => {
-        history.pushState(`/detail/${id}`);
+    // const goDetail = id => {
+    //     history.push(`/detail/${id}`);
+    // };
+
+    const goDetail = src => {
+        history.push(`/detail/${src}`);
     };
     
     return (
         <div className="container">
             {items.map((item, index) => (
-                <Item ket={`ITEM ${item.id}`} item={item.id} name={item.name} onClickHandler={goDetail}/>
+                <Item key={`ITEM${item.id}`} item={item} onClickHandler={goDetail} />
             ))};
         </div>
     );

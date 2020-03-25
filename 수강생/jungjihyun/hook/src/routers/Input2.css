@@ -28,7 +28,7 @@
 }
 .right button{
 	background-color: #0071B3;
-	color: white;
+	color: #fff;
 	border: none;
 	outline: none;
 	padding: 0 20px;
@@ -37,4 +37,26 @@
 }
 .right button:active{
 	background-color: rgb(11, 78, 117);
+}
+.list {
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+.card {
+	background: white;
+	border: 1px solid #ddd;
+	box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+	margin-bottom: 10px;
+	padding: 20px;
+	border-radius: 3px;
+	display: flex;
+}
+.info {
+	flex: 1;
+}
+.info .row{
+	margin: 5px 0;
 }
