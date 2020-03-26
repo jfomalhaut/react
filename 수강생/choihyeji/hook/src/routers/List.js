@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ITEMS from '../jsons/fishes.json';
 import Item from '../components/Item';
-import './List.css';
+// import './List.css';
 
 const List = () => {
     console.log(ITEMS);

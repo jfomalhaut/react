@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Item = ({item : {id, name, price}}) => {
+const Item = ({item : {type, name, price}}) => {
     const transType= type =>{
-
         switch (type){
-            case 1: "수산물";
-            case 2: "청과";
-            case 3: "야채";
+            case 1: return "수산물";
+            case 2: return "청과";
+            case 3: return "야채";
         }
-    }
+    };
+
     return(
         <div className="item">
             <div className={`img color${type}`}></div>
@@ -17,7 +17,7 @@ const Item = ({item : {id, name, price}}) => {
                     <span className={`type border${type}`}>{transType(type)}</span>
                     <span className="name">{name}</span>
                 </div>
-                <div className="price">{price}</div>
+                <div className="price">{price}원</div>
             </div>
         </div>
     );
