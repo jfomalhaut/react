@@ -1,5 +1,5 @@
 {
-  "name": "hook",
+  "name": "addr",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "dotenv-webpack": "^1.7.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.9.0",

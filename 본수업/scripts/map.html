@@ -1,0 +1,37 @@
+<html>
+<head></head>
+<body>
+	<script>
+		const items = [
+			{id: 1, name: 'aa', check: false},
+			{id: 2, name: 'bb', check: false}, // 이놈
+			{id: 3, name: 'cc', check: false}
+		];
+
+		// items.push({id: 4, name: 'dd', check: false}); // 리모델링
+		// const newItems = items.concat({id: 4, name: 'dd', check: false}); //새로 만든거 (react, 불변성)
+
+		// - concat: 추가할 때
+		// - map : 수정할 때
+		// - filter: 삭제할 때
+		// - reduce: 용법이 다양, total
+
+		// onCheck(1);
+
+		console.log({...items});
+		console.log(items);
+
+		const item = {id: 2, name: 'bb', check: true};
+		
+		function onCheck(idx) {
+			const newItems = items.map((item, index) => 
+				idx === index ? ({ ...item, check: true }) : item
+			);
+
+			console.log(newItems);
+		};
+
+
+	</script>
+</body>
+</html>
