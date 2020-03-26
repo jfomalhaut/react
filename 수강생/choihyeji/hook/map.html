@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+    <script>
+        const items = [
+            {id: 1, name: 'aa', check: false},
+            {id: 2, name: 'bb', check: false},
+            {id: 3, name: 'cc', check: false}
+        ];
+
+        // push / concat의 차이
+        // items.push({id: 4, name: 'dd', check: false}); // 리모델링 (react 에서 쓰면 안됨) push에 직접 넣는다
+        // const newItems = items.concat({id: 4, name: 'dd', check: false}); // 새로 만든 것, 무조건 새로 만들어서 넣는다
+
+        // map, filter, reduce, concat 많이 쓰는 것들
+        // - concat: 추가할 때
+        // - map: 수정할 때
+        // - filter: 삭제할 때
+        // - reduce: 용법이 다양, total, 복합적
+
+        onCheck(1);
+
+        console.log({...items}); // 배열을 풀어쓰라는 뜻
+        console.log(items); // {...item}의 결과는 이거랑 같다
+        
+        // const item = {id: 2, name: 'bb', check: false, check: true} 저 if문은 이거와 같음
+
+       function onCheck(idx) {
+            const newItems = items.map((item, index) => 
+                idx === index ? ({ ...item, check: true }) : item
+            );
+
+            console.log(newItems);
+        };
+
+        console.log(items);
+    </script>
+</body>
+</html>
