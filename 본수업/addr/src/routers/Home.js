@@ -9,13 +9,28 @@ const Home = () => {
 	const [list, setList] = useState([]);
 	const [total, setTotal] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
+	const [addr, setAddr] = useState('');
 
 	const getAddress = () => {
-		Axios.get(`${ADDR_API}?confmKey=${CONFIRM_KEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=역삼동`).then(res => {
+		if (addr === '') return;
+		// const data = {
+		// 	confmKey: CONFIRM_KEY,
+		// 	currentPage,
+		// 	countPerPage: VIEW,
+		// 	resultType: 'json',
+		// 	keyword: addr
+		// };
+		Axios.get(`${ADDR_API}?confmKey=${CONFIRM_KEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=${addr}`).then(res => {
 			const { data: { results : { common: { totalCount }, juso } } } = res;
 			setList(juso);
 			setTotal(totalCount);
+			setAddr('');
 		});
+	};
+
+	const onChnageAddr = ev => {
+		const { target: { value } } = ev;
+		setAddr(value);
 	};
 
 	const prev = () => {
@@ -40,9 +55,13 @@ const Home = () => {
 	return (
 		<div className="container">
 			<h1>검색된 주소는 총 {total}개입니다</h1>
+			<div className="inputField">
+				<input value={addr} onChange={onChnageAddr} />
+				<button onClick={getAddress}>검색</button>
+			</div>
 			<div className="list">
-				{list.map(item => (
-					<div className="addr">
+				{list.map((item, index) => (
+					<div className="addr" key={`ADDRESS${index}`}>
 						<div className="zipNo">{item.zipNo}</div>
 						<div className="addrs">
 							<div className="roadAddrPart1">{item.roadAddrPart1}</div>
