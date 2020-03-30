@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 const ADDR_API = "http://www.juso.go.kr/addrlink/addrLinkApi.do	"
+const YS = "역삼동";
 const CONFIRM_KEY = process.env.CONFIRM_KEY;
 const VIEW = 10;
 
@@ -8,17 +9,28 @@ const Home = () =>{
     const [list, setList] = useState([]);
     const [total, setTotal] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const [addr, setAddr]= useState('');
+
 
     const getAddress =() =>{
-        Axios.get(`${ADDR_API}?confmKey=${CONFIRM_KEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=역삼동`).then(res =>{
-            const {data : {results : { common: {totalCount}, juso, zipNo }}}= res;
+        Axios.get(`${ADDR_API}?confmKey=${CONFIRM_KEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=${addr}`).then(res =>{
+            const {data : {results : { common: {totalCount}, juso }}}= res;
             setList(juso);
             setTotal(totalCount);
-        })        
-
+            setAddr('');
+        })  
     };
 
-    const next = _index => {
+    const onAddr = event => {
+        const {target : {value}} =  event;
+        setAddr(value)
+    }
+
+    const insert = () =>{
+        getAddress();
+    }
+
+    const next = () => {
         setCurrentPage(currentPage + 1);
     };
 
@@ -30,16 +42,22 @@ const Home = () =>{
     }
 
     useEffect(()=>{
+        if (addr === '') return;
         getAddress();
     },[currentPage])
 
-    useEffect(()=> {
-        getAddress();
-    },[])
+
+    // useEffect(()=> {
+    //     getAddress();
+    // },[])
 
     return (
             <div className="container">
             <h1>검색된 주소는 총 {total}개입니다</h1>
+            <div className="add_input">
+                <input value={addr} onChange={onAddr} placeholder="주소명 입령"/>
+                <button onClick={getAddress}>검색</button>
+            </div>
                 <div className="list">
                     {list.map((item, index) => (
                         <div className="addr">

@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Item = ({item : {type, name, price}}) => {
-    const transType= type =>{
+    const transType = type =>{
+        console.log(type)
         switch (type){
             case 1: return "수산물";
             case 2: return "청과";

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Input from './routes/Input'
 import List from './routes/List';
-import Corona from './routes/corona';
+import ListTest from './routes/ListTest';
+import Input2 from './routes/Input 2';
 
-ReactDOM.render(<Corona/>, document.getElementById('root'));
+ReactDOM.render(<Input2/>, document.getElementById('root'));

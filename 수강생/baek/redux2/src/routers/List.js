@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ITEMS from '../jsons/fishes.json';
 import './List.css'
 import {GoCheck} from 'react-icons/go';
-
+import { useDispatch } from 'react-redux';
+import Ations from '../actions';
 
 const List = () => {
+    const dispatch = useDispatch(); //값을 보내줄떄 
     const [list, setList] = useState([]);
     const [count, setCount] = useState(0);
     const [total, setTotal] = useState(0);
@@ -52,6 +54,10 @@ const List = () => {
         setCount(after.length);
     }, [list]);
 
+    const addCart = item =>{
+        dispatch(Ations.cartAtion.addCart(item));
+    }
+
     return(
         <div className="container">
             <h1>선택된 항목 수 : <span className="count">{count}</span></h1>
@@ -70,8 +76,9 @@ const List = () => {
                         </div>
                         <div className="info">
                             <div className="name">{item.name}</div>
-                            <div className="price">{item.price}원</div>
+                            <div className="price">{(item.price)}원</div>
                             <button className="delete" onClick={()=>onDel(index)}>삭제</button>
+                            <button className="delete" onClick={()=>addCart(item)}>담기</button>
                         </div>
                     <div className="checkbox">
                         <span className={ item.check ? 'active' : ''} onClick={()=> onCheck(index)}>

@@ -4,8 +4,6 @@ import './List.css'
 import {GoCheck} from 'react-icons/go';
 
 
-
-
 const List = () => {
     const [list, setList] = useState([]);
     const [count, setCount] = useState(0);
@@ -23,21 +21,16 @@ const List = () => {
     }
 
     const checkAll = () =>{
-        // const after = list.map(item=>({...item, check:true}));
-        let after;
-        if(count === list.length){//전체선택
-             after =list.map(item => ({...item, check:false}));
-        }else{
-            after =list.map(item => ({...item, check:true}));
-        }
+        const flag = count === list.length ? false : true;
+        const after = list.map(item => ({...item, check: flag}));
         setList(after);
     }
     
     const removeCheck = () => {
         const after = list.filter(item => !item.check);
         setList(after);
-
     }
+
     const removeAll = () =>{
         setList([]);
     }
