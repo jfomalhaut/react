@@ -32,10 +32,10 @@ button.delete{
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 	background-color: white;
 }
-.checkBox{
+.checkbox{
 	margin: 10px;
 }
-.checkBox span{
+.checkbox span{
 	cursor: pointer;
 	border: 1px solid #ddd;
 	width: 25px;
@@ -48,7 +48,7 @@ button.delete{
 	background-color: #f9f9f9;
 }
 
-.checkBox .active{
+.checkbox .active{
 	color: #f9f9f9;
 	background-color: #C9242B;
 	border: none;

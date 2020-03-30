@@ -1,10 +1,9 @@
 import React from 'react';
-import Input from './routers/Input';
-import List from './routers/List';
+import Home from './routers/Home';
 
 const App = () => {
     return (
-        <List />
+        <Home />
     );
 };
 

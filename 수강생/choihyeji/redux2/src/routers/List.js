@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import ITEMS from '../jsons/fishes.json';
 import './List.css';
-import ITEMS from '../components/jsons/fishes.json';
 import { GoCheck } from 'react-icons/go';
+import { useDispatch } from 'react-redux';
+import Actions from '../actions';
 
-const List = () => {
+const List2 = () => {
+    const dispatch = useDispatch();
     const [list, setList] = useState([]);
     const [count, setCount] = useState(0);
     const [total, setTotal] = useState(0);
 
     const onCheck = idx => {
         const after = list.map((item, index) => 
-            idx === index ? ({...item, check: !item.check}) : item
+            idx === index ? ({ ...item, check: !item.check}) : item
         );
         setList(after);
     };
@@ -31,14 +34,18 @@ const List = () => {
     };
 
     const removeAll = () => {
+        // const after = list.filter(item => !item);
+        // setList(after);
         setList([]);
-    }
+    };
 
     const onDelete = idx => {
         const after = list.filter((item, index) => idx !== index);
+
         setList(after);
     };
 
+    
     useEffect(() => {
         const after = list.filter(item => item.check);
         const sum = after.reduce((acc, cur) => {
@@ -49,6 +56,10 @@ const List = () => {
         setTotal(sum);
         setCount(after.length);
     }, [list]);
+
+    const addCart = item => {
+        dispatch(Actions.cartAction.addCart(item))
+    };
 
     useEffect(() => {
         setList(ITEMS);
@@ -71,20 +82,21 @@ const List = () => {
                             <img src={item.src} />
                         </div>
                         <div className="info">
-                            <div clasName="name">{item.name}</div>
-                            <div clasName="price">{item.price}원</div>
+                            <div className="name">{item.name}</div>
+                            <div className="price">{item.price}원</div>
                             <button className="delete" onClick={() => onDelete(index)}>삭제</button>
+                            <button className="delete" onClick={() => addCart(item)}>담기</button>
                         </div>
-                        <div className="checkBox">
-                            <span className={ item.check ? 'active' : ''} onClick={() => onCheck(index)}>
+                        <div className="checkbox">
+                            <span className={ item.check ? 'active' : '' } onClick={() => onCheck(index)}>
                                 <GoCheck />
                             </span>
                         </div>
                     </div>
-                ))} 
+                ))}
             </div>
         </div>
     );
 };
 
-export default List;
+export default List2;
