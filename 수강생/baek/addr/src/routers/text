@@ -1,0 +1,21 @@
+
+목표: 주소받아서 리스트로 출력하기
+
+1. html 작성
+2. 주소 API 선언.
+3. .env에서 CONFIRM_KEY 받기.
+4. Axios로 주소 데이터 받기
+- 현재페이지, 페이지당 주소 수, 컨펌키, 키워드, 리절트 타입
+- useEffect에 getAddress실행 추가
+- getAddress생성 및 Axios 실행
+- 결과값 받아서 리스트 받기
+- 필요한 데이터 : 총 페이지수, 주소 리스트
+
+5. 데이터 list에 담기
+- setList(juso)
+6. 데이터 출력
+- map 사용
+7. currnet페이지 변경을 통해서 next, prev 버튼 만들기
+- useState로 currentPage 생성
+- currentPage가 변경됨에 따라 getAddress 재실행
+- useEffect 사용
