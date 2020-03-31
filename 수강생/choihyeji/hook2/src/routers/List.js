@@ -1,66 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import ITEMS from '../jsons/fishes.json';
-import './List2.css';
 import { GoCheck } from 'react-icons/go';
+import ITEMS from '../jsons/fishes.json';
+import './List.css';
 
-const List2 = () => {
+const List = () => {
     const [list, setList] = useState([]);
     const [count, setCount] = useState(0);
     const [total, setTotal] = useState(0);
 
-    const onCheck = idx => {
+    const checkAll = () => {
+        let after;
+        if ( count === list.length) {
+            after = list.map(item => ({...item, check: false}));
+        } else {
+            after = list.map(item => ({...item, check: true}));
+        };
+        setList(after);
+    };
+
+    const onCheck = _index => {
         const after = list.map((item, index) => 
-            idx === index ? ({ ...item, check: !item.check}) : item
+            _index === index ? ({ ...item, check: !item.check}) : item
         );
         setList(after);
     };
 
-    const checkAll = () => {
-        let after;
-        if(count === list.length) {
-            after = list.map(item => ({ ...item, check: false}));
-        } else {
-            after = list.map(item => ({ ...item, check: true}));
-        }
-        setList(after);
-    };
-
     const removeCheck = () => {
-        const after = list.filter(item => !item.check);
+        const after = list.filter(item => !item.check );
         setList(after);
     };
 
     const removeAll = () => {
-        // const after = list.filter(item => !item);
-        // setList(after);
         setList([]);
     };
 
-    const onDelete = idx => {
-        const after = list.filter((item, index) => idx !== index);
+    const onDelete = _index => {
+        const after = list.filter((item, index) => _index !== index );
         setList(after);
     };
 
-    
     useEffect(() => {
         const after = list.filter(item => item.check);
         const sum = after.reduce((acc, cur) => {
             acc = acc + cur.price;
             return acc;
-        }, 0);
-        
+        },0);
         setTotal(sum);
         setCount(after.length);
     }, [list]);
-
+    
     useEffect(() => {
         setList(ITEMS);
     },[]);
 
     return (
         <div className="container">
-            <h1>선택된 항목 수 : <span className="count">{count}</span></h1>
-            <h1>선택된 상품의 총액 : <span className="count">{total}원</span></h1>
+            <h1>선택된 항목 수: <span className="count">{count}</span></h1>
+            <h1>선택된 항목의 총액: <span className="total">{total}원</span></h1>
             <div className="options">
                 <button onClick={checkAll}>전체선택</button>
                 <button onClick={removeCheck}>선택삭제</button>
@@ -90,4 +86,4 @@ const List2 = () => {
     );
 };
 
-export default List2;
+export default List;
