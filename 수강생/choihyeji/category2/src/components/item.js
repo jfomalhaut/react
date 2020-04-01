@@ -1,9 +1,12 @@
 import React from 'react';
 
-const item = () => {
+const Item = () => {
     return (
-
+        <div>
+            Item
+        </div>
     );
+
 };
 
-export default item;
+export default Item;
