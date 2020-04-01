@@ -72,9 +72,6 @@ const List = () => {
 
 	return (
 		<div className="container">
-			<h1>선택된 항목 수 : <span className="count">{count}</span></h1>
-			<h1>선택된 상품의 총액 : <span className="count">{nf.format(total)}원</span></h1>
-			<h1>장바구니 수 : <span className="count">{cartLength}</span></h1>
 			<div className="options">
 				<button onClick={checkAll}>전체선택</button>
 				<button onClick={removeCheck}>선택삭제</button>
