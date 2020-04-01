@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const items = [
+            {id: 1, name:'aa', check: false},
+            {id: 2, name:'bb', check: false},
+            {id: 3, name:'cc', check: false}
+        ];
+
+        // onCheck(1);
+
+        console.log({...items});
+        console.log(items);
+        
+        function onCheck(idx) {
+            const newItems = items.map((item, index) => 
+                idx === index ? ({ ...item, check:true }) : item
+            );
+
+            console.log(newItems);
+        };
+    </script>
+    <!-- map : 수정할때
+    filter : 삭제할때
+    reduce : 용법이 다양, total
+    concat : 추가할때 -->
+</body>
+</html>
