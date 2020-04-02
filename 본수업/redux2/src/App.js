@@ -9,13 +9,6 @@ const App = () => {
 	const length = useSelector(({ cartReducer }) => {
 		return cartReducer.cart.length;
 	});
-	const cart = useSelector(({ cartReducer }) => {
-		return cartReducer.cart;
-	});
-
-	useEffect(() => {
-		console.log(cart);
-	}, [cart]);
 
 	return (
 		<BrowserRouter>
