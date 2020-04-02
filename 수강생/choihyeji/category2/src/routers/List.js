@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './List.css';
-import ITEMS from '../jsons/items.json';
 import CATEGORY from '../jsons/category.json';
+import ITEMS from '../jsons/items.json';
 import Item from '../components/Item';
+import './List.css';
 
 const List = ( { history, match : { params : { category } } } ) => {
     const [view, setView] = useState([]);
@@ -13,17 +13,16 @@ const List = ( { history, match : { params : { category } } } ) => {
 
     const sortItem = (cate) => {
         let _id = 0;
-        switch (cate) {
+        switch(cate) {
             case 'all': _id = 0; break;
             case 'fish': _id = 1; break;
             case 'fruit': _id = 2; break;
             case 'vegetable': _id = 3; break;
         }
-
         setOnType(_id);
-        if (_id === 0) {
+        if (_id === 0) { //전체보기
             setView(ITEMS);
-        } else {
+        } else { // 1. 수산물, 2. 청과, 3.채소
             const sort = ITEMS.filter(item => {
                 return item.type === _id;
             });
@@ -33,15 +32,15 @@ const List = ( { history, match : { params : { category } } } ) => {
     };
 
     const navigate = value => {
-        history.pushState(`/${value}`);
+        history.push(`/${value}`);
     };
 
     const offLoading = () => {
         setTimeout(() => {
             setLoading(false);
-        },400);  
+        }, 400);
     };
-    
+
     useEffect(() => {
         sortItem(category);
     },[category]);
@@ -55,16 +54,16 @@ const List = ( { history, match : { params : { category } } } ) => {
         <div className="container">
             <ul className="header">
                 {CATEGORY.map(item => (
-                    <li
-                        className={`label ${onType === item.id ? 'active' : ''} `}
-                        key={`CATEGORY${item.id}`}
+                    <li 
+                        className={`label ${onType === item.id ? 'active' : ''}`}
+                        key={`category${item.id}`} 
                         onClick={() => navigate(item.path)}
                     >
                         {item.label}
                     </li>
                 ))}
             </ul>
-            {isLoading ? (
+            { isLoading ? (
                 <div className="loading">Loading...</div>
             ) : (
                 <div className="items">
