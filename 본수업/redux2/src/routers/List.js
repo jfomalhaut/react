@@ -72,12 +72,9 @@ const List = () => {
 
 	return (
 		<div className="container">
-<<<<<<< HEAD
 			{/* <h1>선택된 항목 수 : <span className="count">{count}</span></h1>
 			<h1>선택된 상품의 총액 : <span className="count">{nf.format(total)}원</span></h1>
 			<h1>장바구니 수 : <span className="count">{cartLength}</span></h1> */}
-=======
->>>>>>> 8aad0fb3326d97b34d7045804f42dd57a80fa8ab
 			<div className="options">
 				<button onClick={checkAll}>전체선택</button>
 				<button onClick={removeCheck}>선택삭제</button>
