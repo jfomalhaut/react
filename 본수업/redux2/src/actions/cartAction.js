@@ -17,6 +17,24 @@ const removeAll = () => {
 		type: 'removeAll'
 	};
 };
+const checkAll = () => {
+	return {
+		type: 'checkAll'
+	};
+};
+
+const removeCheck = () =>{
+	return {
+		type: 'removeCheck'
+	}
+}
+
+const onCheck = id => {
+	return{
+		type: 'onCheck',
+		data: id
+	};
+};
 
 const onCheck = id => {
 	return {
@@ -43,5 +61,8 @@ export default {
 	removeCheck,
 	addCart,
 	removeCart,
-	removeAll
+	removeAll,
+	onCheck,
+	checkAll,
+	removeCheck
 };
