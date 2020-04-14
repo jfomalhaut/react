@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
-import CARTITEM from '../components/cartItem';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import CartItem from '../components/CartItem';
 import Actions from '../actions';
 
-
 const Cart = () => {
-	const dispatch = useDispatch ();
-	// const [list, setList] = useState([]);
-	// const [count, setCount] = useState(0);
-
-	const checkAll = () =>{
-		dispatch(Actions.cartAction.checkAll())
-		
-	}
-
-	const removeCheck = () =>{
-		dispatch(Actions.cartAction.removeCheck())
-	}
-
-	const removeAll = () =>{
-		dispatch(Actions.cartAction.removeAll([]));
-	}
-
-	//구독
-	const cart = useSelector(({cartReducer})=>{
+	const dispatch = useDispatch();
+	// 구독
+	const cart = useSelector(({ cartReducer }) => {
 		return cartReducer.cart;
-	})
+	});
+
+	const removeAll = () => {
+		dispatch(Actions.cartAction.removeAll());
+	};
+
+	const checkAll = () => {
+		dispatch(Actions.cartAction.checkAll());
+	};
+
+	const removeCheck = () => {
+		dispatch(Actions.cartAction.removeCheck());
+	};
+
 	return (
 		<div className="container">
 			<div className="options">
@@ -36,7 +31,7 @@ const Cart = () => {
 			</div>
 			<div className="list">
 				{cart.map(item => (
-					<CARTITEM key={`CARTITEM${item.id}`} item={item}/>
+					<CartItem key={`CARTITEM${item.id}`} item={item} />
 				))}
 			</div>
 		</div>

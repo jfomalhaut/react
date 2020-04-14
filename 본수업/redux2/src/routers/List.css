@@ -4,6 +4,10 @@
 }
 .count{
 	color: #C9242B;
+	font-size: 15px;
+}
+.pricePerCount{
+	font-size: 12px;
 }
 .options {
 	margin-bottom: 20px;
