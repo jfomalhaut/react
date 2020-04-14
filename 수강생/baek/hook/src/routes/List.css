@@ -74,3 +74,11 @@ button.delete{
 .price {
 	font-size: 17px;
 }
+
+.default{
+	color: darkgray;
+}
+
+.activeMenu{
+	color: blue;
+}
