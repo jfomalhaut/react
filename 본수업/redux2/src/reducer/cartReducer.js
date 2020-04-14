@@ -28,6 +28,7 @@ const cartReducer = (state = initailValue, { data, type }) => {
 			});
 			return { ...state };
 		}
+		
 		case 'removeAll': {
 			state.cart = [];
 			return { ...state };
