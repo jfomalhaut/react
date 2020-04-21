@@ -36,33 +36,11 @@ const onCheck = id => {
 	};
 };
 
-const onCheck = id => {
-	return {
-		type: 'onCheck',
-		data: id
-	};
-};
-
-const checkAll = () => {
-	return {
-		type: 'checkAll'
-	};
-};
-
-const removeCheck = () => {
-	return {
-		type: 'removeCheck'
-	};
-};
-
 export default {
 	onCheck,
 	checkAll,
-	removeCheck,
 	addCart,
 	removeCart,
 	removeAll,
-	onCheck,
-	checkAll,
 	removeCheck
 };
