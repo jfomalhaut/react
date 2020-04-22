@@ -2,7 +2,7 @@ import React from 'react';
 
 const BestItems = ({ items:{ name, price, price2, sale, src }, index }) => {
     return (
-        <div className="best_items" key={`BESTITEM(index)`}>
+        <div className="best_items" key={`BESTITEM${index}`}>
             <img src={src}/>
             <div className="best_items_text">
                 <div className="items_tit">{name}</div>

@@ -1,16 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
-import Home from './Routers/Home';
-import About from './Routers/About';
-import Shop from './Routers/Shop';
-import Outlet from './Routers/Outlet';
-import Magazin from './Routers/Magazin';
-import Event from './Routers/Event';
-import Store from './Routers/Store';
-import Login from './Routers/Login';
-import Join from './Routers/Join';
-import Search from './Routers/Search';
-import Cart from './Routers/Cart';
+import { Home, About, Shop, Outlet, Magazin, Event, Store, Login, Join, Search, Cart } from './Routers';
+ // index.js가 routers폴더 안에 있으므로 Routers까지만 경로를 잡아주고 중괄호 안에 이름 그대로 넣어준다.
 import './App.css';
 import imageURI from './globals/imageURI';
 

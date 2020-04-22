@@ -1,0 +1,254 @@
+*{margin: 0; padding: 0; text-decoration: none;}
+.container{
+    width: 100%;
+    position: relative;
+}
+.btn_up{
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    border: 0;
+    background: white;
+    position: absolute;
+    right: 80px;
+    top: 520px;
+}
+.banner{
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+}
+.slide img{
+    margin-left: -190px;
+}
+.dot_box{
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    text-align: center;
+    z-index: 60;
+}
+.dot{
+    width: 24px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+.recommend{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.recomm_tit{
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 120px 0px 60px 0px;
+}
+.recomm_img{
+    height: 740px;
+    margin-left: -190px;
+}
+.promotion{
+    width: 100%;
+    height: 670px;
+    background: yellowgreen;
+    margin: 140px 0px 0px 0px;
+    overflow: hidden;
+}
+.promotion img{
+    height: 670px;
+    margin-left: -190px;
+}
+.best_seller{
+    width: 100%;
+}
+.best_tit{
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 120px 0px 60px 0px;
+
+}
+.best_item{
+    width: 1240px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 auto 70px auto;
+    /* margin: 0px 50px 100px 0px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.best_seller{
+    position: relative;
+}
+.best_arr_left{
+    width: 34px;
+    height: 68px;
+    overflow: hidden;
+    z-index: 30;
+    position: absolute;
+    top: 370px;
+    left: 70px;
+    cursor: pointer;
+}
+.best_arr_right{
+    width: 34px;
+    height: 68px;
+    overflow: hidden;
+    z-index: 30;
+    position: absolute;
+    top: 370px;
+    right: 70px;
+    cursor: pointer;
+}
+.best_arr_right img{
+    margin-left: -34px;
+}
+.best_items img{
+    width: 100%;
+    height: 375px;
+}
+.best_items_text{
+    padding: 0px 10px;
+    margin: 20px 0px 0px 0px;
+}
+.items_tit{
+    font-size: 16px;
+    font-weight: bold;
+}
+.items_price{
+    height: 27px;
+    line-height: 27px;
+    display: flex;
+    margin: 7px 0px 0px 0px;
+}
+.items_pri{
+    font-size: 20px;
+}
+.items_sale{
+    font-size: 13px;
+    color: #999999;
+    margin: 0px 0px 0px 20px;
+    text-decoration: line-through;
+}
+.sale{
+    margin: 0px 0px 0px 150px;
+}
+.best_sell_nav{
+    width: 100%;
+    /* height: 10px; */
+    margin: 0px 0px 140px 0px;
+}
+.b_s_nav_box{
+    width: 100%;
+    text-align: center;
+}
+.nav_box{
+    width: 30px;
+    height: 3px;
+    background: gray;
+    display: inline-block;
+    margin: 0px 5px 0px 5px;
+}
+.collabo{
+    width: 100%;
+    /* height: 600px; */
+    overflow: hidden;
+}
+.collabo img{
+    height: 600px;
+    background: rosybrown;
+    margin-left: -190px;
+}
+.magazin_tit{
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 120px 0px 60px 0px;
+}
+.magazin_wrap{
+    width: 1240px;
+    margin: 0 auto 140px auto;
+}
+.m_wrap_up{
+    display: flex;
+    margin-bottom: 100px;
+}
+.m_wrap_up img{
+    width: 760px;
+    height: 100%;
+    background: saddlebrown;
+}
+.magazin_up{
+    padding: 160px 0px 80px 80px !important;
+}
+.ma_sub{
+    font-size: 18px;
+    font-weight: bold;
+    color: #030303;
+    display: block;
+    margin: 0px 0px 10px 0px;
+}
+.ma_tit{
+    font-size: 35px;
+    font-weight: bold;
+    color: #030303;
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+.ma_text{
+    font-size: 15px;
+    color: #333333;
+    display: block;
+}
+.m_wrap_down{
+    display: flex;
+}
+.magazin_down{
+    padding: 160px 80px 80px 0px;
+}
+.m_wrap_down img{
+    width: 760px;
+    height: 100%;
+    background: saddlebrown;
+}
+
+.sns{
+    background: #f2f2f2;
+    margin-bottom: 140px;
+}
+.sns_tit{
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 120px 0px 60px 0px;
+}
+.sns_imgs{
+    width: 1240px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    margin: 0 auto;
+}
+.sns_img{
+    width: 380px;
+    height: 380px;
+    position: relative;
+}
+.sns_icon{
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}

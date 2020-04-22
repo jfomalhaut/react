@@ -1,0 +1,75 @@
+.container{
+    width: 100%;
+}
+.btn_up{
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    background: white;
+    position: absolute;
+    right: 80px;
+    top: 520px;
+    border: 0;
+}
+.maga_tit{
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 120px 0px 60px 0px;
+}
+.maga_look{
+    width: 1240px;
+    margin: 0 auto;
+}
+.maga_look{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.maga_main{
+    border-bottom: 1px solid gray;
+}
+.maga_img{
+    width: 610px;
+    height: 420px;
+    background: palevioletred;
+}
+.maga_title{
+    width: 100%;
+    margin: 20px 0px 30px 0px;
+}
+.maga_title span{
+    display: block;
+}
+.name{
+    font-size: 30px;
+    color: #030303;
+}
+.dec{
+    font-size: 15px;
+    color: #333333;
+    margin: 7px 0px 0px 0px;
+}
+.maga_sub{
+    width: 100%;
+    /* border-top: 1px solid lightgray; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 20px 0px 0px 0px;
+}
+.sub_item{
+    display: flex;
+}
+.sub_img{
+    width: 60px;
+    height: 75px;
+    background: peru;
+}
+.sub_tit{
+    width: 65px;
+    font-size: 13px;
+    color: #636363;
+    margin: auto 0;
+    padding: 0px 0px 0px 7px;
+}

@@ -3,6 +3,10 @@ const imageURI = {
     logo: require ('../../assets/logo.png').default,
     banner1: require ('../../assets/banner1.jpg').default,
     banner2: require ('../../assets/banner2.jpg').default,
+    banner3: require ('../../assets/banner3.jpg').default,
+    banner4: require ('../../assets/banner4.jpg').default,
+    banner5: require ('../../assets/banner5.jpg').default,
+    banner6: require ('../../assets/banner6.jpg').default,
     recommend1: require ('../../assets/recommend1.jpg').default,
     recommend2: require ('../../assets/recommend2.jpg').default,
     dingo: require ('../../assets/dingo.jpg').default,
@@ -25,7 +29,8 @@ const imageURI = {
     arr: require ('../../assets/arrow.png').default,
     arr1: require ('../../assets/arrow1.png').default,
     arr2: require ('../../assets/arrow2.png').default,
-    topBtn: require ('../../assets/topbtn.png').default
+    topBtn: require ('../../assets/topbtn.png').default,
+    about: require ('../../assets/aboutpage.jpg').default
 };
 
 export default imageURI;

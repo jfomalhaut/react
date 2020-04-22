@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const ShopItem = ({ item:{ id, src1, name, price, price2, sale } }) => {
+const ShopItem = ({ item:{ src1, name, price, price2, sale }, index }) => {
     return (
-        <div className="shop_item">
-            <span className="itme_num">1{id}</span>
+        <div className="shop_item" key={`SHOPI${index}`}>
+            <span className="itme_num">1</span>
             <div className="item_img">
-                <img>{src1}</img>
+                <img src={src1} />
             </div>
             <div className="item_text">
                 <div className="item_tit">
