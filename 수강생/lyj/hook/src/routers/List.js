@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Items from '../jsons/fishes.json';
 import { AiOutlineCheck } from 'react-icons/ai';
 import Fishitem from '../components/fishitem';
-import './List.css';
+import './List-yj.css';
 
 const List = () => {
     const [item, setItem] = useState([]);

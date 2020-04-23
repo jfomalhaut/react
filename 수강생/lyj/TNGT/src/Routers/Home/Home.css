@@ -15,12 +15,29 @@
 }
 .banner{
     height: 800px;
-    position: relative;
     overflow: hidden;
-    position: relative;
 }
-.slide img{
-    margin-left: -190px;
+.slide{
+    background-position: center center;
+    height: 100vh;
+}
+.slide1{
+    background-image: url("../../../assets/banner1.jpg");
+}
+.slide2{
+    background-image: url("../../../assets/banner2.jpg");
+}
+.slide3{
+    background-image: url("../../../assets/banner3.jpg");
+}
+.slide4{
+    background-image: url("../../../assets/banner4.jpg");
+}
+.slide5{
+    background-image: url("../../../assets/banner5.jpg");
+}
+.slide6{
+    background-image: url("../../../assets/banner6.jpg");
 }
 .dot_box{
     width: 100%;
@@ -29,7 +46,7 @@
     bottom: 30px;
     left: 0;
     text-align: center;
-    z-index: 60;
+    z-index: 200;
 }
 .dot{
     width: 24px;
@@ -38,6 +55,21 @@
     margin: 5px;
     display: inline-block;
     cursor: pointer;
+}
+.slick-dots{
+    position: absolute;
+    bottom: 50px;
+}
+.slick-dots button{
+    width: 100px;
+    height: 3px;
+    color: white;
+    opacity: 0.3;
+
+}
+.slick-active{
+    color: white;
+    opacity: 1;
 }
 .recommend{
     width: 100%;
@@ -80,12 +112,12 @@
     display: flex;
     flex-wrap: nowrap;
     margin: 0 auto 70px auto;
-    /* margin: 0px 50px 100px 0px; */
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 10px; */
     position: relative;
     overflow: hidden;
+    background: red;
 }
 .best_seller{
     position: relative;
@@ -251,4 +283,7 @@
     position: absolute;
     top: 15px;
     left: 15px;
+}
+.sns_icon1{
+    z-index: 200 !important;
 }

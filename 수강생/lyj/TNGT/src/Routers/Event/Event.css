@@ -24,11 +24,14 @@
 }
 .banner_img_l{
     width: 617px;
-    height: 411px;
-    background: peru;
+    /* height: 411px; */
     position: relative;
     display: inline-block;
     margin: 0px 6px 0px 0px;
+    overflow: hidden;
+}
+.banner_img_l img{
+    width: 100%;
 }
 .ban_tit_l{
     width: 555px;
@@ -50,10 +53,13 @@
 
 .banner_img_r{
     width: 617px;
-    height: 411px;
-    background: lightsalmon;
+    /* height: 411px; */
     display: inline-block;
     position: relative;
+    overflow: hidden;
+}
+.banner_img_r img{
+    width: 100%;
 }
 .ban_tit_r{
     width: 555px;
@@ -74,11 +80,12 @@
 }
 
 .bottom_banner{
-    width: 100%;
     background: #f2f2f2;
     padding: 100px 0px 0px 0px;
 }
 .banner_boxes{
+    width: 1240px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;

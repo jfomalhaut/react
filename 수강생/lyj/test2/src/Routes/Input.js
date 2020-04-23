@@ -5,7 +5,7 @@ const Input = () => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [tel, setTel] = useState('');
-    const [phoneBook, setPhoneBook] = useState([]);
+    const [book, setBook] = useState([]);
 
     const onChangeName = event => {
         const { target: { value } } = event;
@@ -19,25 +19,20 @@ const Input = () => {
         const { target: { value } } = event;
         setTel(value);
     };
-    
+
     const onInsert = () => {
-        const data = {
-            name, age, tel
-        };
-        const book = phoneBook.concat(data);
-        setPhoneBook(book);
+        const data = { name, age, tel};
+        const pb = book.concat(data).reverse();
+        setBook(pb);
+        setName('');
+        setAge('');
+        setTel('');
     };
 
-    const onDelete = _ind => {
-        const deletPhoneBook = phoneBook.filter((item, index) => {
-            return index !== _ind;
-        });
-        setPhoneBook(deletPhoneBook);
-    }
-
-    useEffect ( () => {
-        console.log(phoneBook);
-    }, [phoneBook]);
+    useEffect (() => {
+        console.log(book);
+    }, [book]);
+  
 
     return (
         <div className="container">
@@ -58,8 +53,8 @@ const Input = () => {
                 </div>
             </div>
             <div className="list">
-                {phoneBook.map((item, index) => (
-                    <Card />
+                {book.map((item, index) => (
+                    <Card onDeleteA={onDelete} index={index} goods={item} key={`CARD${index}`}/>
                 ))}
             </div>
         </div>

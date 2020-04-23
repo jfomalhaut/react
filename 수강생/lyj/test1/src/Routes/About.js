@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About = () => {
+const About = ({ match: { params: { data } } }) => {
     return (
-        <h1>About COMPONENT</h1>
+        <h1>About COMPONENT, data: {data}</h1>
     );
 };
 

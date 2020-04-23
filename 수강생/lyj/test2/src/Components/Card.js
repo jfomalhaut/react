@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({ goods:{ name, age, tel }, index, onDeleteA }) => {
     return (
         <div className="card" key={`CARD${inedx}`}>
             <div className="info">
@@ -9,7 +9,7 @@ const Card = () => {
                 <div className="Tel">전화번호 : {item.tel}</div>
             </div>
             <div className="delet">
-                <button onClick={() => onDelete(index)}>삭제</button>
+                <button onClick={() => onDeleteA(index)}>삭제</button>
             </div>
         </div>
     );

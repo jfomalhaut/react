@@ -1,18 +1,27 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Home.css';
-import { BestItems, Footer } from '../../component';
+import { BestItems, BestSNSitem, Footer } from '../../component';
 import imageURI from '../../globals/imageURI';
 
 const BEST_ITEMS = [
-    {id: 1, name:'dd', price: 1000, price2: 880, sale: '24%', src: `${imageURI['ex']}`},
-    {id: 2, name:'dd', price: 1000, price2: 880, sale: '24%', src: `${imageURI['ex']}`},
-    {id: 3, name:'dd', price: 1000, price2: 880, sale: '24%', src: `${imageURI['ex']}`},
-    {id: 4, name:'dd', price: 1000, price2: 880, sale: '24%', src: `${imageURI['ex']}`},
-    // {id: 5, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'item.jpg'},
-    // {id: 6, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'item.jpg'},
-    // {id: 7, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'item.jpg'}
+    {id: 1, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 2, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 3, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 4, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 5, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 6, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 7, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'},
+    {id: 8, name:'dd', price: 1000, price2: 880, sale: '24%', src: 'ex'}
 ];
+const SNS_ITEMS = [
+    {id:1, src: 'sns1', src2: 'ico_sns'},
+    {id:2, src: 'sns2', src2: 'ico_sns'},
+    {id:3, src: 'sns3', src2: 'ico_sns'},
+    {id:4, src: 'sns4', src2: 'ico_sns'},
+    {id:5, src: 'sns5', src2: 'ico_sns'},
+    {id:6, src: 'sns6', src2: 'ico_sns'}
+]
 
 const Home = () => {
     const setting = {
@@ -22,9 +31,21 @@ const Home = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
+        autoSpeed: 500,
+        cssEase: "linear",
+        pauseOnHover: false
+      };
+    const setting2 = {
+        // dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // autoplay: true,
         autoSpeed: 2000,
         cssEase: "linear"
       };
+      
     return (
         <div className="container">
             <button className="btn_up">
@@ -33,32 +54,27 @@ const Home = () => {
             <div className="banner">
                 <Slider {...setting}>
                     <div className="slide slide1">
-                        <img src={`${imageURI['banner1']}`}/>
                     </div>
                     <div className="slide slide2">
-                        <img src={`${imageURI['banner2']}`}/>
                     </div>
                     <div className="slide slide3">
-                        <img src={`${imageURI['banner3']}`}/>
                     </div>
                     <div className="slide slide4">
-                        <img src={`${imageURI['banner4']}`}/>
                     </div>
                     <div className="slide slide5">
-                        <img src={`${imageURI['banner5']}`}/>
                     </div>
                     <div className="slide slide6">
-                        <img src={`${imageURI['banner6']}`}/>
                     </div>
+                    {/* slick-active opacity1/0.3 */}
                 </Slider>
-                <div className="dot_box">
+                {/* <div className="dot_box">
+                    <div className="dot"></div> 
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
-                    <div className="dot"></div>
-                </div>
+                </div> */}
             </div>
             <div className="recommend">
                 <div className="recomm_tit">
@@ -79,9 +95,19 @@ const Home = () => {
                     <img src={`${imageURI['arr']}`} />
                 </div>
                 <div className="best_item">
-                    {BEST_ITEMS.map((item, index) => (
-                        <BestItems index={index} items={item} key={`BESTITEM${index}`} />
-                    ))}
+                    <Slider { ...setting }>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        <div>hi</div>
+                        {/* {BEST_ITEMS.map((item, index) => (
+                            <BestItems index={index} items={item} key={`BESTITEM${item.id}`} />
+                        ))} */}
+                    </Slider>
                 </div>
                 <div className="best_arr_right">
                     <img src={`${imageURI['arr']}`} />
@@ -137,43 +163,9 @@ const Home = () => {
                         <span>SNS</span>
                     </div>
                     <div className="sns_imgs">
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns1']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns2']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns3']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns4']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns5']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        <div className="sns_img">
-                            <img src={`${imageURI['sns6']}`} />
-                            <div className="sns_icon">
-                                <img className="sns_icon1" src={`${imageURI['snsIcon']}`} />
-                            </div>
-                        </div>
-                        
+                        {SNS_ITEMS.map((item, index) => (
+                            <BestSNSitem index={index} item={item} key={`SNSITEM${item.id}`} />
+                        ))}
                     </div>
                 </div>
             </div>

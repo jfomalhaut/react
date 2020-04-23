@@ -1,0 +1,26 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        const items = [
+            {id: 1, name: 'aa', check: false},
+            {id: 2, name: 'bb', check: false},
+            {id: 3, name: 'cc', check: false}
+        ];
+        console.log(items);
+        console.log({...items}); //위에와 같은 내용 items를 풀어서 써라
+        
+        // onCheck(1);
+
+        function onCheck(idx){
+            const newItems = items.map((item, index) =>
+                idx === index ? ({ ...item, check: true }) : item //{id: 2, name: 'bb', check: false, check: true} check: true바꿀 내용을 다시 써준다
+                );
+            console.log(newItems);
+        };
+        //idx는 내가누른 index, items.map((item, index)의 index는 고유의 index
+    </script>
+</body>
+</html>
