@@ -27,7 +27,7 @@ function App() {
           <h1 className="number">3</h1>
         </div>
         <div className="slide slide4">
-          <h1 className="number">4</h1>
+          <h1 className="number">4</h1>  
         </div>
         <div className="slide slide5">
           <h1 className="number">5</h1>
