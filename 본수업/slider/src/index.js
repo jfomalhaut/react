@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import List from './routers/List';
+import List2 from './routers/List2';
+import List3 from './routers/List3';
 
-ReactDOM.render(<List />, document.getElementById('root'));
+ReactDOM.render(<List3 />, document.getElementById('root'));

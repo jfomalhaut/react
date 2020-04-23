@@ -1,0 +1,21 @@
+.item {
+	height: 200px;
+	background: #bbb;
+	box-sizing: border-box;
+	border: 5px solid #fff;
+}
+
+.type1 {
+	width: calc(100% / 3);
+	background: black;
+}
+
+.type2 {
+	width: 25%;
+	background: lightgray;
+}
+
+.type3 {
+	width: 20%;
+	background: darkgray;
+}
