@@ -30,6 +30,7 @@
     font-size: 14px;
     color: #1c1c1c;
     line-height: 57px;
+    cursor: pointer;
 }
 .cate_left span{
     padding: 0px 25px;
