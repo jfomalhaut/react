@@ -12,7 +12,8 @@ const Item2 = ({ index, item: { name, type }}) => {
 		} else {
 			setClassName('type3');
 		}
-	}, [])
+	}, []);
+	
 	return (
 		<div className={`item ${className}`}>
 			{name}
