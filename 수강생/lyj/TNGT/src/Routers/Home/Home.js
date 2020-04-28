@@ -49,7 +49,9 @@ const Home = () => {
     return (
         <div className="container">
             <button className="btn_up">
-                <img src={`${imageURI['topBtn']}`} />
+                <a herf="#header">
+                    <img src={`${imageURI['topBtn']}`} />
+                </a>
             </button>
             <div className="banner">
                 <Slider {...setting}>

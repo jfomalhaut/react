@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import imageURI from './../globals/imageURI';
 
-const [creatClass, setCreatClass] = useState("");
-useEffect((item, index) => {
-    if(index > 3 & < 0) {
-        setCreatClass("type1");
-    } else if(index > 7 & < 3) {
-        setCreatClass("type2");
-    } else {
-        setCreatClass("type3");
-    }
-})
 
 
 const BestItems = ({ items:{ name, price, price2, sale, src }, index }) => {
     
     return (
-        <div className="best_items">
+        <div className="best_item">
             <img src={imageURI[src]}/>
             <div className="best_items_text">
                 <div className="items_tit">{name}</div>

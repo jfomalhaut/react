@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Shop.css';
 import { ShopItem, Footer } from '../../component';
+import imageURI from './../../globals/imageURI';
 
 const SHOP_ITEMS = [ //상수:변경안됨
     {id: 1, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 1},
@@ -47,6 +48,7 @@ const Shop = () => {
                 <div className="cate_right">
                     <div className="cate_r_tit">
                         <span>최근 1일</span>
+                        <img className="cate_img" src={`${imageURI['cate']}`} />
                     </div>
                     <ul className="cate_r_nav">
                         <li>최근 1일</li>

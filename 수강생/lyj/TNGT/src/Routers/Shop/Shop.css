@@ -10,6 +10,7 @@
     right: 80px;
     top: 520px;
     border: 0;
+    scroll-behavior: smooth;
 }
 .tit{
     text-align: center;
@@ -45,8 +46,11 @@
     right: 25px;
     top: 0;
 }
-/* hover 안됨 */
-.cate_r_tit:hover .cate_r_nav{
+.cate_r_tit span{
+    margin: 0px 12px 0px 0px;
+    line-height: 61px;
+}
+.cate_right:hover .cate_r_nav{
     opacity: 1;
 }
 .cate_r_nav{
@@ -64,8 +68,9 @@
     display: block;
     line-height: 30px;
 }
-
-
+.cate_r_nav li:hover{
+    color: red;
+}
 .shop_all{
     width: 1240px;
     margin: 0 auto;
@@ -74,11 +79,34 @@
     margin-bottom: 140px;
 }
 .all_top{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+    margin: 0 auto; */
+    width: 1210px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
+.sItem{
+    margin: 0px 0px 100px 0px;
+}
+
+.type1{
+    /* width: calc( ( 100% - 20px) / 3); */
+    width: 353px;
+    margin-right: 75.5px;
+}
+.type1:nth-child(3){
+    margin-right: 0px;
+}
+.type2{
+    width: calc( ( 100% - 30px) / 4);
+}
+.type3{
+    width: calc( ( 100% - 50px) / 6);
+}
+
 .shop_item{
     position: relative;
 }
@@ -96,12 +124,13 @@
 }
 .item_img img{
     width: 353px;
+    /* width: 100%; */
     height: 448px;
     background: green;
 }
 .item_text{
     width: 100%;
-    margin: 30px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
     padding: 0px 5px;
 }
 .item_tit{
@@ -111,6 +140,7 @@
     display: flex;
     line-height: 20px;
     margin: 15px 0px 0px 0px;
+    text-align: center;
 }
 .item_sale{
     font-size: 20px;
