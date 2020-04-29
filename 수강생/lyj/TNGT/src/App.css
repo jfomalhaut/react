@@ -182,10 +182,10 @@ header{
 }
 .h_tit{
     height: 60px;
-    padding: 60px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
 }
 .h_tit span{
-    font-size: 35px;
+    font-size: 32px;
     font-weight: bold;
     text-align: left;
 }
@@ -198,6 +198,7 @@ header{
     cursor: pointer;
 }
 .h_dec span{
+    height: 10px;
     letter-spacing: 1px;
     margin: 0px 70px 10px 0px;
 }
