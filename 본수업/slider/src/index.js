@@ -6,4 +6,4 @@ import List3 from './routers/List3';
 import Test from './routers/Test';
 import Pagination from './routers/Pagination';
 
-ReactDOM.render(<Pagination />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

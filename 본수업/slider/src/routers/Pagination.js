@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Pagination.css';
 
+const VIEW = 8; // 1페이지에 보이는 아이템 수
 const ITEMS = [
 	{
 		"id": 1,
@@ -298,59 +299,52 @@ const ITEMS = [
 	}
 ];
 
-
-const VIEW = 10; // 1페이지에 보이는 아이템 수
-
-const Pagination = () => {
-	const [items, setItems] = useState([]);
+const Pagination = ({ history, match: { params: { page } } }) => {
 	const [viewItem, setViewItem] = useState([]);
-	const [pagi, setPagi] = useState([]); // 총 페이지의 배열
-	const [viewPage, setViewPage] = useState(1); // 보고 있는 페이지
-	const [total, setTotal] = useState(0); // 전체 페이지 수
+	const [total, setTotal] = useState(0);
 
-	const CustomPagination = val => { // val: 5
+	const CustomPagination = ({ totalPage }) => { //내부에 컴퍼넌트를 만듦
 		let pages = [];
-		for (let i = 1; i <= val; i++) {
-			pages.push(i);
+		for (let i = 1; i <= totalPage; i++) {
+			pages = pages.concat(i);
 		}
-		setPagi(pages);
+		return (
+			<ul className="pagination">
+				{pages.map((item) => (
+					<li 
+						key={`PAGE${item}`} 
+						onClick={() => history.push(`/list/${item}`)} 
+						className={item === Number(page) ? 'activePage' : ''}
+					>
+						{item}
+					</li>
+				))}
+			</ul>
+		);
 	};
 
 	useEffect(() => {
-		const start = (viewPage - 1) * VIEW;  // 보고 있는 페이지의 상품 index
+		const start = (page - 1) * VIEW;  // 보고 있는 페이지의 상품 index
 		const end = start + VIEW > ITEMS.length ? ITEMS.length - 1 : start + VIEW;
-		
-		const _items = ITEMS.filter((item, idx) => {
-			if (start <= idx && idx < end) {
-				return item;
-		 	} else {
-				return null;
-			}
-		});
-
+		const _items = ITEMS.filter((item, idx) => (start <= idx && idx < end));
 		setViewItem(_items);
-	}, [viewPage]);
+	}, [page]);
 
 	useEffect(() => {
 		const ct = Math.ceil(ITEMS.length / VIEW);
 		setTotal(ct);
-		CustomPagination(ct);
 	}, []);
 
 	return (
-		<div>
-			<div>
-				{viewItem.map(item => (
-					<div>
+		<div className="pageContainer">
+			<div className="pageList">
+				{viewItem.map((item, index) => (
+					<div key={`ITEM${index}`} className="pageItem">
 						{item.name}
 					</div>
 				))}
 			</div>
-			<ul className="pagination">
-				{pagi.map(item => (
-					<li onClick={() => setViewPage(item)} className={item === viewPage ? 'activePage' : ''}>{item}</li>
-				))}
-			</ul>
+			<CustomPagination totalPage={total} />
 		</div>
 	);
 };

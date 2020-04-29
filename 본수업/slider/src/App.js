@@ -1,6 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './App.css';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Pagination from './routers/Pagination';
 
 function App() {
   const setting = {
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <Slider {...setting}>
+      {/* <Slider {...setting}>
         <div className="slide slide1">
           <h1 className="number">1</h1>
         </div>
@@ -32,7 +34,13 @@ function App() {
         <div className="slide slide5">
           <h1 className="number">5</h1>
         </div>
-      </Slider>
+      </Slider> */}
+      <BrowserRouter>
+        <Switch>
+          <Route path="/list/:page" exact component={Pagination} />
+          <Redirect to="list/1"/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
