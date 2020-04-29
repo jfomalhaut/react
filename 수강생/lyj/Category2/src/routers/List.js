@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './List.css';
 import ITEMS from '../jsons/items.json';
 import CATEGORY from '../jsons/category.json';
@@ -41,7 +41,7 @@ const List = () => {
     return (
         <div className="container">
             <ul className="header">
-                {CATEGORY.map(item => {
+                {CATEGORY.map(item => (
                     <li
                         className={`lable${ onType === item.id ? 'active' : '' }`}
                         key={`category${item.id}`}
@@ -49,14 +49,14 @@ const List = () => {
                     >
                         {item.label}
                     </li>
-                })}
+                ))}
             </ul>
             {isLoading ? (
                 <div className="loading">loading</div>
             ) : (
                 <div className="items">
                     {view.map(item => (
-                        <Item item={item} key={`item$(item.id)`} />
+                        <Item item={item} key={`item${item.id}`} />
                     ))}
                 </div>
             )}

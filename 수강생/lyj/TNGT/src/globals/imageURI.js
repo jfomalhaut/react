@@ -30,7 +30,10 @@ const imageURI = {
     arr1: require ('../../assets/arrow1.png').default,
     arr2: require ('../../assets/arrow2.png').default,
     topBtn: require ('../../assets/topbtn.png').default,
-    about: require ('../../assets/aboutpage.jpg').default
+    about: require ('../../assets/aboutpage.jpg').default,
+    event1: require ('../../assets/event1.jpg').default,
+    event2: require ('../../assets/event2.jpg').default,
+    cate: require ('../../assets/shop_cate.png').default
 };
 
 export default imageURI;

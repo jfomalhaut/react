@@ -32,6 +32,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-slick": "^0.25.2"
+    "react-slick": "^0.25.2",
+    "react-sticky-header": "^0.2.0"
   }
 }

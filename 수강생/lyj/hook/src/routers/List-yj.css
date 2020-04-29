@@ -1,0 +1,35 @@
+.svg{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+AiOutlineCheck {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+.container{
+    margin: 0 auto;
+    width: 750px;
+    height: 600px;
+}
+.items{
+    display: flex;
+    padding: 20px;
+    border: 1px solid black;
+}
+img{
+    height: 500px;
+}
+.text{
+    font-size: 20px;
+    display: block;
+    padding: 25px;
+}
+.name{
+    margin-bottom: 50px;
+    /* height: 500px; */
+}
+.price{
+    /* height: 500px; */
+}
