@@ -1,0 +1,17 @@
+.pagination{
+	display: flex;
+}
+
+ul, li{
+	padding: 0; margin: 0;
+}
+
+li {
+	list-style: none;
+	padding: 0 5px;
+	color: #666;
+}
+
+.activePage {
+	color: red;
+}
