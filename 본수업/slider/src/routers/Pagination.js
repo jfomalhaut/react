@@ -323,7 +323,7 @@ const Pagination = ({ history, match: { params: { page } } }) => {
 					</div>
 				))}
 			</div>
-			<CustomPagination onPage={onPage} total={ITEMS.length} view={VIEW} page={page} />
+			<CustomPagination onPage={onPage} total={ITEMS.length} view={VIEW} page={Number(page)} />
 		</div>
 	);
 };
