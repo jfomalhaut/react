@@ -45,7 +45,7 @@ const CustomPagination = ({ onPage, total, view, page }) => {
 	
 	useEffect(() => {
 		const ct = Math.ceil(total / view);
-		if (page < 1 && page > ct) {
+		if (page < 1 || page > ct) {
 			onPage(1);
 		}
 		const _pages = [...Array(ct)].map((item, index) => (index + 1));
