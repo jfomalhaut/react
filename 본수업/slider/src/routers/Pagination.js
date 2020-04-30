@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Pagination.css';
+import CustomPagination from '../components/CustomPagination';
 
 const VIEW = 8; // 1페이지에 보이는 아이템 수
 const ITEMS = [
@@ -301,26 +302,9 @@ const ITEMS = [
 
 const Pagination = ({ history, match: { params: { page } } }) => {
 	const [viewItem, setViewItem] = useState([]);
-	const [total, setTotal] = useState(0);
 
-	const CustomPagination = ({ totalPage }) => { //내부에 컴퍼넌트를 만듦
-		let pages = [];
-		for (let i = 1; i <= totalPage; i++) {
-			pages = pages.concat(i);
-		}
-		return (
-			<ul className="pagination">
-				{pages.map((item) => (
-					<li 
-						key={`PAGE${item}`} 
-						onClick={() => history.push(`/list/${item}`)} 
-						className={item === Number(page) ? 'activePage' : ''}
-					>
-						{item}
-					</li>
-				))}
-			</ul>
-		);
+	const onPage = val => {
+		history.push(`/list/${val}`);
 	};
 
 	useEffect(() => {
@@ -329,11 +313,6 @@ const Pagination = ({ history, match: { params: { page } } }) => {
 		const _items = ITEMS.filter((item, idx) => (start <= idx && idx < end));
 		setViewItem(_items);
 	}, [page]);
-
-	useEffect(() => {
-		const ct = Math.ceil(ITEMS.length / VIEW);
-		setTotal(ct);
-	}, []);
 
 	return (
 		<div className="pageContainer">
@@ -344,7 +323,7 @@ const Pagination = ({ history, match: { params: { page } } }) => {
 					</div>
 				))}
 			</div>
-			<CustomPagination totalPage={total} />
+			<CustomPagination onPage={onPage} total={ITEMS.length} view={VIEW} page={page} />
 		</div>
 	);
 };
