@@ -9,11 +9,19 @@ header h1 {
 	color: white;
 }
 
+header .subHeader {
+	width: 100%;
+	background: yellowgreen;
+}
+
 .fix {
 	position: fixed;
 	background: black;
 	top: 0; left: 0;
 	z-index: 1000;
+}
+.fix .subHeader {
+	display: none;
 }
 .fix h1 {
 	color: white;

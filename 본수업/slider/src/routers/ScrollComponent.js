@@ -13,13 +13,14 @@ const ScrollComponent = () => {
 		window.addEventListener('scroll', onScroll);
 
 		return () => {
-			window.removeEventListener('scroll');
+			window.removeEventListener('scroll', onScroll);
 		}
 	}, []);
 
 	return (
 		<div className="scrollContainer">
-			<header className={top > 0 ? 'fix' : '' }>
+			<header className={top > 0 ? 'fix' : '' }>	
+				<div className="subHeader">sub</div>
 				<h1>HEADER</h1>
 			</header>
 			<main>
