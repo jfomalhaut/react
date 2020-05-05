@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import './Home.css';
 import { BestItems, BestSNSitem, Footer } from '../../component';
@@ -23,7 +23,11 @@ const SNS_ITEMS = [
     {id:6, src: 'sns6', src2: 'ico_sns'}
 ]
 
-const Home = () => {
+const Home = ({ history }) => {
+    const goItemPage = () => {
+        history.push("ItemPage");
+    }
+    
     const setting = {
         dots: true,
         infinite: true,
@@ -83,7 +87,7 @@ const Home = () => {
                     <span>RECOMMEND ITEM</span>
                 </div>
                 <div className="recomm_img">
-                    <img src={`${imageURI['recommend1']}`}/>
+                    <img src={`${imageURI['recommend1']}`} onClick={goItemPage} />
                 </div>
             </div>
             <div className="promotion">

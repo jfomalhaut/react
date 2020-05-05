@@ -9,6 +9,7 @@ import Login from './Login/Login';
 import Join from './Join/Join';
 import Search from './Search/Search';
 import Cart from './Cart/Cart';
+import ItemPage from './itemPage';
 
 export {
     Home,
@@ -21,5 +22,6 @@ export {
     Login,
     Join,
     Search,
-    Cart
+    Cart,
+    ItemPage
 };

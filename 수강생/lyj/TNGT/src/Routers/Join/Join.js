@@ -8,28 +8,28 @@ const Join = () => {
                 <button className="btn_join">회원가입</button>
                 <div className="join_info">
                     <div className="thanks">
-                        <img src=""/>
+                        <div className="icon_img thanksI" />
                         <div className="thanks_tit">
                             <span className="t_name">신규가입 감사 쿠폰</span>
                             <span className="t_dec">회원가입 시 할인헤택 쿠폰 발근</span>
                         </div>
                     </div>
                     <div className="birth">
-                        <img src="" />
+                    <div className="icon_img birthI" />
                         <div className="birth_tit">
                             <span className="b_neme">생일 축하 쿠폰</span>
                             <span className="b_dec">생일(양/음력) 7일전 10% 할인쿠폰 발급</span>
                         </div>
                     </div>
                     <div className="grade">
-                        <img src="" />
+                        <div className="icon_img gradeI" />
                         <div className="grade_tit">
                             <span className="g_neme">회원 등급별 혜택</span>
                             <span className="g_dec">매월 1일 최대 10% 할인쿠폰 발급</span>
                         </div>
                     </div>
                     <div className="mileage">
-                        <img src="" />
+                    <div className="icon_img mileageI" />
                         <div className="mileage_tit">
                             <span className="m_neme">마일리지 혜택</span>
                             <span className="m_dec">상품 구매 시 최대 2.5% 적립상품평 작성 시 최대 900mile/점 적립</span>

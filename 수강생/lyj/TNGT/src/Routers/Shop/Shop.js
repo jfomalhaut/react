@@ -21,9 +21,13 @@ const SHOP_ITEMS = [ //상수:변경안됨
 //SHOP_ITEMS는 변경안되는 전체값, sItem은 보여주기값 >> SHOP_ITEMS에서 필터줘서 sItem으로 보여지게 됨 sItem.map
 
 const Shop = ({ history, match }) => {
-    const [sItem, setSItem] = useState(SHOP_ITEMS);
+    const [sItem, setSItem] = useState([]);
     const [isAll, setIsAll] = useState(false);
     const { params: { type } } = match;
+
+    const goItemPage = () => {
+        history.push("ItemPage");
+    }
 
     const setMenu = val => {
         history.push(`/${val}`);
@@ -36,31 +40,30 @@ const Shop = ({ history, match }) => {
         // setSItem(after);
     };
 
+    const transType = val => {
+        switch (val) {
+            case 'all' : return 0;
+            case 'outer' : return 1;
+            case 'top' : return 2;
+            case 'bottom' : return 3;
+            case 'acc' : return 4;
+            case 'suit' : return 5;
+        }
+    };
 
-    // useEffect(() => {
-    //     let val = 0;
-    //     switch (type) {
-    //         case 'all' : return '0'; break;
-    //         case 'outer' : return '1'; break;
-    //         case 'top' : return '2'; break;
-    //         case 'bottom' : return '3'; break;
-    //         case 'acc' : return '4'; break;
-    //         case 'suit' : return '5'; break;
-    //     }
+    useEffect(() => {
+        const val = transType(type);
 
-    //     if (type === 'all') {
-    //         setIsAll(true);
-    //     } else {
-    //         setIsAll(false);
-    //     }
-
-    //     if (val === 0) {
-    //         setSItem(SHOP_ITEMS);
-    //         return;
-    //     }
-    //     const after = SHOP_ITEMS.filter(item => item.type === val);
-    //     setSItem(after);
-    // }, [type]);
+        console.log(val);
+       
+        if (val === 0) {
+            setSItem(SHOP_ITEMS);
+            return;
+        }
+        const after = SHOP_ITEMS.filter(item => item.type === val);
+        setSItem(after);
+        console.log(after);
+    }, [type]);
 
 
     return (
@@ -71,12 +74,12 @@ const Shop = ({ history, match }) => {
             </div>
             <div className="category">
                 <div className="cate_left">
-                    <span onClick={() => setMenu(item.type)}>ALL</span>
-                    <span onClick={() => setMenu(item.type)}>OUTER</span>
-                    <span onClick={() => setMenu(item.type)}>TOP</span>
-                    <span onClick={() => setMenu(item.type)}>BOTTOM</span>
-                    <span onClick={() => setMenu(item.type)}>ACC</span>
-                    <span onClick={() => setMenu(item.type)}>SUIT</span>
+                    <span onClick={() => setMenu('all')}>ALL</span>
+                    <span onClick={() => setMenu('outer')}>OUTER</span>
+                    <span onClick={() => setMenu('top')}>TOP</span>
+                    <span onClick={() => setMenu('bottom')}>BOTTOM</span>
+                    <span onClick={() => setMenu('acc')}>ACC</span>
+                    <span onClick={() => setMenu('suit')}>SUIT</span>
                 </div>
                 <div className="cate_right">
                     <div className="cate_r_tit">
@@ -92,14 +95,16 @@ const Shop = ({ history, match }) => {
             </div>
             <div className="shop_all">
                 <div className="all_top">
-                    {sItem.map((item, index) => (
-                        <ShopItem isAll={isAll} history={history} index={index} items={item} key={`SHOPI${item.id}`} />
+                    {SHOP_ITEMS.map((item, index) => (
+                        <ShopItem isAll={isAll} history={history} index={index} item={item} key={`SHOPI${item.id}`}
+                        onClick={goItemPage} />
                     ))}
                 </div>
             </div>
             <div className="all_down">
-                {sItem.map((item, index) => (
-                    <ShopItemDown index={index} items={item} key={`SHOPI${item.id}`} />
+                {SHOP_ITEMS.map((item, index) => (
+                    <ShopItemDown index={index} item={item} key={`SHOPI${item.id}`}
+                    onClick={goItemPage} />
                 ))}
             </div>
            <Footer />

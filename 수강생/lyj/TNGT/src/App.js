@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
-import { Home, About, Shop, Outlet, Magazin, Event, Store, Login, Join, Search, Cart } from './Routers';
+import { Home, About, Shop, Outlet, Magazin, Event, Store, Login, Join, Search, Cart, ItemPage } from './Routers';
  // index.js가 routers폴더 안에 있으므로 Routers까지만 경로를 잡아주고 중괄호 안에 이름 그대로 넣어준다.
 import imageURI from './globals/imageURI';
 import './App.css';
@@ -235,10 +235,16 @@ const App = () => {
                                 <li>
                                     <Link to="/join">JOIN</Link>
                                 </li>
-                                <li>
+                                <li className="search_glass">
                                     <Link to="/search">
                                         <img className="glass_img" src={`${imageURI['glass']}`} />
                                     </Link>
+                                    <div className="header_hover_glasses">
+                                        <div className="search_box">
+                                            <input className="search" placeholder="검색어를 입력하세요" autoFocus="on" />
+                                            <img className="glass_big_img" src={`${imageURI['glass2']}`} />
+                                        </div>
+                                    </div>
                                 </li>
                                 <li>
                                     <Link to="/cart">
@@ -253,7 +259,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/home" component={Home} />
                 <Route path="/about" component={About} />
-                <Route path="/shop/:type" component={Shop} />
+                <Route path="/shop/:type" component={Shop} /> 
                 <Route path="/outlet" component={Outlet} />
                 <Route path="/magazin" component={Magazin} />
                 <Route path="/event" component={Event} />
@@ -262,10 +268,12 @@ const App = () => {
                 <Route path="/join" component={Join} />
                 <Route path="/search" component={Search} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/itemPage" component={ItemPage} />
                 <Redirect path="*" to="/home" />
             </Switch>
         </BrowserRouter>
     );
+    // /shop/:type
 };
 
 export default App;

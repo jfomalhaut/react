@@ -96,9 +96,20 @@ footer{
     padding: 30px 40px;
 }
 .footer_down img{
-    width: 100%;
     height: 25px;
     margin: 0px 20px 0px 0px;
+}
+.f_img1{
+    width: 111px !important;
+}
+.f_img2{
+    width: 102px !important;
+}
+.f_img3{
+    width: 87px !important;
+}
+.f_img4{
+    width: 449px !important;
 }
 .footer_down span{
     margin: 0px 0px 0px 10px;

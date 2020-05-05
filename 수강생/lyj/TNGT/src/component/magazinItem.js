@@ -1,40 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { MagazinSmallitem } from '../component';
 import imageURI from './../globals/imageURI';
 
-const MagazinItem = ({ items:{ title, text, itemTitle1, itemTitle2, itemTitle3, itemTitle4, src, src2, src3, src4, src5 } }) => {
+const MAGAZIN_SMALL = [
+    {id: 1, title: '제목입니다', text: 'tttext입니다 입니다 입니다', itemTitle1: '[BLACK] 컬러 배색 가디건 rkelrjs', src: 'magazine1', src2: 'ex'},
+    {id: 2, title: '제목입니다', text: 'tttext입니다 입니다 입니다', itemTitle1: '[BLACK] 컬러 배색 가디건 rkelrjs', src: 'magazine2', src2: 'ex'},
+    {id: 3, title: '제목입니다', text: 'tttext입니다 입니다 입니다', itemTitle1: '[BLACK] 컬러 배색 가디건 rkelrjs', src: 'magazine3', src2: 'ex'},
+    {id: 4, title: '제목입니다', text: 'tttext입니다 입니다 입니다', itemTitle1: '[BLACK] 컬러 배색 가디건 rkelrjs', src: 'magazine4', src2: 'ex'}
+];
+
+const MagazinItem = ({ match, small, item:{ title, text, itemTitle1, src, src2, sub_items } }) => {
+    const [ maItem, setMaItem ] = useState("");
+    // const { params: { sub_items }} = match;
+
+    useEffect (() => {
+        if (sub_items === 4) {
+            setMaItem("m_type1");
+        } else if (sub_items === 3) {
+            setMaItem("m_type2");
+        } else {
+            setMaItem("m_type3");
+        };
+    }, []);
+
     return (
         <div className="maga_item">
             <div className="maga_main">
                 <img className="maga_img" src={imageURI[src]} />
                 <div className="maga_title">
-                    <span className="name">외출 하고 싶어지는 가디건 스타일링{title}</span>
-                    <span className="dec">완전한 봄날 외출 준비를 하시는 여러분을 위한 심플한 가디건 스타일링 팁!{text}</span>
+                    <span className="name">{title}</span>
+                    <span className="dec">{text}</span>
                 </div>
             </div>
-            <div className="maga_sub">
-                <div className="sub_item">
-                    <img className="sub_img" src={imageURI[src2]} />
-                    <div className="sub_tit">
-                        <span>[BLACK]컬러 배색 가디건{itemTitle1}</span>
-                    </div>
-                </div>
-                <div className="sub_item">
-                    <img className="sub_img" src={imageURI[src3]} />
-                    <div className="sub_tit">
-                        <span>[BLACK]컬러 배색 가디건{itemTitle2}</span>
-                    </div>
-                </div>
-                <div className="sub_item">
-                    <img className="sub_img" src={imageURI[src4]} />
-                    <div className="sub_tit">
-                        <span>[BLACK]컬러 배색 가디건{itemTitle3}</span>
-                    </div>
-                </div>
-                <div className="sub_item">
-                    <img className="sub_img" src={imageURI[src5]} />
-                    <div className="sub_tit">
-                        <span>[BLACK]컬러 배색 가디건{itemTitle4}</span>
-                    </div>
+            <div className="sub_item">
+                <div className="maga_sub">
+                    {MAGAZIN_SMALL.map((item, index) => (
+                        <MagazinSmallitem maItem={maItem} index={index} item={item} key={`MAGAZINSMALL${item.id}`} />
+                    ))}
                 </div>
             </div>
         </div>

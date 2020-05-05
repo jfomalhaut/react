@@ -1,7 +1,7 @@
 import React from 'react';
 import imageURI from './../globals/imageURI';
 
-const EventItem = ({ items: { name, text, src} }) => {
+const EventItem = ({ item: { name, text, src} }) => {
     return (
         <div className="banner_box">
             <img src={imageURI[src]} />

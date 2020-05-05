@@ -32,10 +32,10 @@ const Footer = () => {
             </div>
         </div>
         <div className="footer_down">
-            <img src={`${imageURI['footer1']}`}/>
-            <img src={`${imageURI['footer2']}`}/>
-            <img src={`${imageURI['footer3']}`}/>
-            <img src={`${imageURI['footer4']}`}/>
+            <img className="f_img1" src={`${imageURI['footer1']}`}/>
+            <img className="f_img2" src={`${imageURI['footer2']}`}/>
+            <img className="f_img3" src={`${imageURI['footer3']}`}/>
+            <img className="f_img4" src={`${imageURI['footer4']}`}/>
             <span>서비스 가입사실 확인 ></span>
         </div>
     </footer>

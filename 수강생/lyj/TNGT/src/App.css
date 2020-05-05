@@ -63,6 +63,36 @@ header{
     margin: 45px 0px 0px 0px;
     padding: 0px 10px 0px 15px;
 }
+.header_hover_glasses{
+    display: none;
+    width: 1525px;
+    height: 320px;
+    background: white;
+    position: absolute;
+    left: -1240px;
+    top: 110px;
+    padding: 0px 500px;
+}
+.search_box{
+    width: 700px;
+    height: 75px;
+    margin: 55px 0px 0px 0px;
+    border-bottom: 3px solid black;
+}
+.search{
+    border-style: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: lightgrey;
+}
+.glass_big_img{
+    width: 30px;
+    margin: 35px 0px 0px 0px;
+    float: right;
+}
+.search_glass:hover .header_hover_glasses{
+    display: block;
+}
 .cart_img{
     width: 20px;
     /* height: 20px; */

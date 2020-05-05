@@ -32,18 +32,19 @@
 .maga_img{
     width: 610px;
     height: 420px;
-    background: palevioletred;
 }
 .maga_title{
     width: 100%;
-    margin: 20px 0px 30px 0px;
+    margin: 25px 0px 30px 0px;
 }
 .maga_title span{
     display: block;
 }
 .name{
-    font-size: 30px;
+    font-size: 30px !important;
     color: #030303;
+    padding: 0px !important;
+    margin: 0px 0px 15px 0px;
 }
 .dec{
     font-size: 15px;
@@ -52,14 +53,41 @@
 }
 .maga_sub{
     width: 100%;
-    /* border-top: 1px solid lightgray; */
-    display: grid;
+    display: flex;
+    margin: 15px 0px 0px 0px;
+    /* display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 0px 0px; */
 }
-.sub_item{
+.small{
     display: flex;
+}
+.m_type1{
+    width: calc( ( 100% - 30px ) / 4);
+    margin-right: 20px;
+}
+.m_type1:nth-child(4){
+    margin-right: 0px;
+}
+.m_type2{
+    width: calc( ( 100% - 20px ) / 3);
+    margin-right: 15px;
+}
+.m_type2:nth-child(3){
+    margin-right: 0px;
+}
+.m_type2:nth-child(4){
+    display: none;
+}
+.m_type3{
+    width: calc( ( 100% - 10px ) / 2);
+}
+.m_type3:nth-child(3){
+    display: none;
+}
+.m_type3:nth-child(4){
+    display: none;
 }
 .sub_img{
     width: 60px;
@@ -67,9 +95,8 @@
     background: peru;
 }
 .sub_tit{
-    width: 65px;
     font-size: 13px;
     color: #636363;
     margin: auto 0;
-    padding: 0px 0px 0px 7px;
+    padding: 0px 10px 0px 7px;
 }

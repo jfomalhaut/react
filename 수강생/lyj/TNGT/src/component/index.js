@@ -6,6 +6,8 @@ import MagazinItem from './magazinItem';
 import EventItem from './eventItem';
 import BestSNSitem from './bestSNSitem';
 
+import MagazinSmallitem from './magazinSmallitem';
+
 export {
-    BestItems, ShopItem, Footer, MagazinItem, EventItem, BestSNSitem, ShopItemDown
+    BestItems, ShopItem, Footer, MagazinItem, MagazinSmallitem, EventItem, BestSNSitem, ShopItemDown
 };

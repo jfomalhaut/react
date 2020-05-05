@@ -19,6 +19,7 @@
 }
 .top_banner{
     width: 1240px;
+    height: 411px;
     margin: 0 auto;
     padding: 0px 0px 140px 0px;
 }
@@ -96,7 +97,6 @@
 .banner_box img{
     width: 400px;
     height: 265px;
-    background: paleturquoise;
 }
 .box_tit{
     width: 100%;

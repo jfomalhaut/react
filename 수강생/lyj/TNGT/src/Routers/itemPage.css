@@ -1,0 +1,152 @@
+*{ margin: 0px; padding: 0px; list-style: none; letter-spacing: 1px;}
+.item_container{
+    width: 940px;
+    margin: 0 auto;
+}
+.contents{
+    width: 100%;
+    padding: 130px 0px 0px 0px;
+}
+.cont_tit{
+    width: 100%;
+}
+.cont_tit span{
+    font-size: 15px;
+    font-weight: bold;
+    color: #444444;
+    letter-spacing: 1.2px;
+}
+.sub_star{
+    float: right;
+}
+.star{
+    width: 60px;
+    margin: 0px 5px 0px 0px;
+}
+.star_num{
+    font-size: 11px;
+    color: #030303;
+}
+
+.cont_contents{
+    display: flex;
+}
+.cont_left{
+    width: 470px;
+    height: 890px;
+    border: 1px solid #ddd;
+}
+.cont_main_img{
+    width: 470px;
+    height: 597px;
+    border: 0px;
+}
+.down_tit{
+    width: 100%;
+}
+.down_tit img{
+    width: 165px;
+    margin: 35px 152.5px 50px 152.5px;
+}
+.down_images{
+    width: 100%;
+    display: flex;
+    margin: 0px 64px;
+}
+.down_img{
+    width: 78px !important;
+    height: 98.5px;
+    margin: 0px 10px 0px 0px;
+    border: 1px solid #ddd;
+}
+.down_img:nth-child(4){
+    margin: 0px;
+}
+.down_icons{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin: 0px 0px 0px 180px;
+}
+.down_icon{
+    width: 30px !important;
+    height: 30px;
+    background-repeat: no-repeat;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 20px 5px 40px 0px;
+}
+.i1{
+    background-image: url("../../assets/icon_sns_story.png");
+}
+.i2{
+    background-image: url("../../assets/icon_sns_facebook.png");
+}
+.i3{
+    background-image: url("../../assets/icon_sns_url.png");
+    margin-right: 0px;
+}
+
+
+.cont_right{
+    width: 410px;
+    margin: 0px 0px 0px 15px;
+}
+.info_box{
+    width: 100%;
+    border: 1px solid #ddd;
+}
+.bo1{
+    border-top: 1px solid black;
+    padding: 28px 23px;
+}
+.info_line1{
+    width: 100%;
+    font-size: 14px !important;
+    margin: 0px 0px 15px 0px;
+}
+.sale_tit{
+    font-weight: bold;
+    display: inline-block;
+}
+.price_boxes{
+    float: right;
+    display: flex;
+}
+.price{
+    color: #AAAAAA;
+}
+.won{
+    color: #AAAAAA;
+}
+.sale_price{
+    color: #555555;
+    margin: 0px 0px 0px 5px;
+    font-weight: bold;
+}
+.info_line2{
+    width: 100%;
+    display: flex;
+    font-size: 14px !important;
+}
+.sub_title button{
+    /* width: 58px;
+    height: 22px; */
+    padding: 4px 7px;
+    color: 11px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: white;
+    margin: 0px 0px 0px 5px;
+}
+.sale_price{
+    display: flex;
+    float: right !important;
+}
+.sale_pre{
+    color: #aaaaaa;
+}
+.sale_price{
+    color: #555555;
+}
