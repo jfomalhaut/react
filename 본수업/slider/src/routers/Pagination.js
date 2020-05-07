@@ -323,6 +323,7 @@ const Pagination = ({ history, match: { params: { page } } }) => {
 					</div>
 				))}
 			</div>
+			<div style={{ backgroundImage: `url(https://news-kr.churchofjesuschrist.org/media/960x540/Jesus-Christ_K_1.jpg)`, height: '300px' }} />
 			<CustomPagination onPage={onPage} total={ITEMS.length} view={VIEW} page={Number(page)} />
 		</div>
 	);

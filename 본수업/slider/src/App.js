@@ -3,6 +3,8 @@ import Slider from 'react-slick';
 import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Pagination from './routers/Pagination';
+import Scroll1 from './routers/Scroll1';
+import Scroll2 from './routers/Scroll2';
 
 function App() {
   const setting = {
@@ -38,7 +40,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/list/:page" exact component={Pagination} />
-          <Redirect to="list/1"/>
+          <Route path="/scroll1" exact component={Scroll1} />
+          <Route path="/scroll2" exact component={Scroll2} />
+          <Redirect to="scroll2"/>
         </Switch>
       </BrowserRouter>
     </div>

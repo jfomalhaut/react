@@ -7,4 +7,4 @@ import Test from './routers/Test';
 import Pagination from './routers/Pagination';
 import ScrollComponent from './routers/ScrollComponent';
 
-ReactDOM.render(<ScrollComponent />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
