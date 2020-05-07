@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 const ADD = 10;
+const INITIAL_VALUE = 20;
 const TOTAL = [
 	{id: 1, name: 'name1'},
 	{id: 1, name: 'name1'},
@@ -86,7 +87,7 @@ const TOTAL = [
 
 const Scroll1 = () => {
 	const [items, setItems] = useState([]);
-	const [view, setView] = useState(20);
+	const [view, setView] = useState(INITIAL_VALUE);
 
 	const more = () => {
 		setView(view + ADD);

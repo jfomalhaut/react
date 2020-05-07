@@ -88,25 +88,27 @@ const TOTAL = [
 const Scroll2 = () => {
 	const itemsRef = useRef();
 	const [items, setItems] = useState([]);
-	const [position, setPosition] = useState(0);
-	const [browserHeight, setBrowserHeight] = useState(0);
 	const [view, setView] = useState(INITIAL_VALUE);
+
+	const [position, setPosition] = useState(0); // 스크롤 top, 우리가 보는 화면의 top의 위치
+	const [browserHeight, setBrowserHeight] = useState(0); // 브라우저의 높이
 
 	const onScroll = ev => {
 		const { srcElement: { scrollingElement: { scrollTop } } } = ev;
 		setPosition(scrollTop);
 	};
-
+	
 	const onBrowser = ev => {
-		const { srcElement: { innerHeight } } = ev;
+		const { srcElement: { innerHeight, innerWidth } } = ev;
 		setBrowserHeight(innerHeight);
 	};
 
 	useEffect(() => {
-		const { current: { offsetHeight } } = itemsRef;
-		const botPosition = browserHeight + position;
+		const { current: { offsetTop, offsetHeight } } = itemsRef;
+		const elementBottom = offsetTop + offsetHeight;
+		const scrollBottom = browserHeight + position;
 
-		if ((offsetHeight - 300) < botPosition) {
+		if ((elementBottom - 300) < scrollBottom) {
 			setView(view + ADD);
 		}
 	}, [position]);
