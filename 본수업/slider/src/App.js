@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Pagination from './routers/Pagination';
 import Scroll1 from './routers/Scroll1';
 import Scroll2 from './routers/Scroll2';
+import Segment from './routers/Segment';
 
 function App() {
   const setting = {
@@ -42,7 +43,8 @@ function App() {
           <Route path="/list/:page" exact component={Pagination} />
           <Route path="/scroll1" exact component={Scroll1} />
           <Route path="/scroll2" exact component={Scroll2} />
-          <Redirect to="scroll2"/>
+          <Route path="/segment" exact component={Segment} />
+          <Redirect to="segment"/>
         </Switch>
       </BrowserRouter>
     </div>
