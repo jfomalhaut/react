@@ -135,30 +135,40 @@ header{
     height: 4px;
     background: black;
     display: none;
+    top: 0;
+    left: 280px !important;
 }
 .outlet_line{
     width: 65px;
     height: 4px;
     background: black;
     display: none;
+    top: 0;
+    left: 372px !important;
 }
 .magazin_line{
     width: 83px;
     height: 4px;
     background: black;
     display: none;
+    top: 0;
+    left: 475px !important;
 }
 .event_line{
     width: 54px;
     height: 4px;
     background: black;
     display: none;
+    top: 0;
+    left: 598px !important;
 }
 .store_line{
     width: 55px;
     height: 4px;
     background: black;
     display: none;
+    top: 0;
+    left: 695px !important;
 }
 .about_btn:hover .about_line{
     display: block;

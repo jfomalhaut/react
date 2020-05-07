@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import imageURI from '../globals/imageURI';
 
 //key는 map 쓸 때만 쓰면 돼요.
-const ShopItem = ({ index, items:{ id, src1, name, price, price2, sale }}) => {
+const ShopItem = ({ history, index, item:{ id, src1, name, price, price2, sale }}) => {
     const [creatClass, setCreatClass] = useState("");
+
+    const goItemPage = () => {
+        history.push("ItemPage");
+    }
 
     useEffect(() => {
         if (0 <= index && index < 7) {
@@ -14,7 +18,7 @@ const ShopItem = ({ index, items:{ id, src1, name, price, price2, sale }}) => {
     }, []);
     
     return (
-        <div className={`sItem ${creatClass}`}>
+        <div className={`sItem ${creatClass}`} onClick={goItemPage}>
             <span className="itme_num">{id}</span>
             <div className="item_img">
                 <img src={imageURI[src1]} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import './itemPage.css';
-import imageURI from './../globals/imageURI';
+import imageURI from '../globals/imageURI';
 
 const ItemPage = () => {
     return (
@@ -56,38 +56,44 @@ const ItemPage = () => {
                         </div>
                         <div className="info_box bo2">
                             <div className="info2 add_tit">추가혜택안내</div>
-                            <div className="info2 card">
-                                <span>카드혜택</span>
+                            <div className="info2 card_box">
+                                <span>·카드혜택</span>
                                 <button>카드무이자안내</button>
                             </div>
-                            <div className="info2 mileage">
-                                <span>1,100M 적립</span>
+                            <div className="info2 mileage_box">
+                                <span>·1,100M 적립</span>
                                 <button>마일리지안내</button>
                             </div>
                         </div>
                         <div className="info_box bo3">
-                            <div className="info3 title">
-                                <span className="info3 title">배송구분 / 배송비</span>
+                            <div className="info3 title_boxx">
+                                <span className="info3 dtitle">배송구분 / 배송비</span>
                                 <span>무료</span>
                             </div>
                             <div className="info3 line2">
-                                <span className="info3 title">배송안내</span>
-                                <span>05/02(토) 도착예정 (지금 결제 시)</span>
+                                <span className="info3 dtitle">배송안내</span>
+                                <span><p className="red_text">05/02(토)</p> 도착예정 (지금 결제 시)</span>
                             </div>
                             <div className="info3 line3">
-                                <span className="info3 title">제조사 / 원산지</span>
+                                <span className="info3 dtitle">제조사 / 원산지</span>
                                 <span>LF / 베트남</span>
                             </div>
                             <div className="info3 line4">
-                                <span className="info3 title">상품코드</span>
+                                <span className="info3 dtitle">상품코드</span>
                                 <span>TGSH0B215N2</span>
                             </div>
                         </div>
                         <div className="info_box bo4">
-                            <div className="info4 color">
+                            <div className="info4 colors">
                                 <span>색상</span>
+                                <ul className="color_boxes">
+                                    <li><img src={`${imageURI['itemColor']}`} /></li>
+                                    <li><img src={`${imageURI['itemColor']}`} /></li>
+                                    <li><img src={`${imageURI['itemColor']}`} /></li>
+                                    <li><img src={`${imageURI['itemColor']}`} /></li>
+                                </ul>
                             </div>
-                            <div className="info4 size">
+                            <div className="info4 sizes">
                                 <div className="size_tit">사이즈</div>
                                 <div className="size_box">
                                     <button>074(29)</button>
@@ -100,7 +106,7 @@ const ItemPage = () => {
                                     <button>사이즈 조건표</button>
                                 </div>
                             </div>
-                            <div className="info4 amount">
+                            <div className="info4 amounts">
                                 <div className="amount_tit">수량</div>
                                 <select>
                                     <option>선택</option>
@@ -112,15 +118,15 @@ const ItemPage = () => {
                         </div>
                         <div className="button_box">
                             <button className="button_buy">
-                                <div className="button_icon buy" />
+                                <div className="button_icon_buy" />
                                 <span>구매하기</span>
                             </button>
                             <button className="button_cart">
-                                <div className="button_icon cart" />
+                                <div className="button_icon_cart" />
                                 <span>쇼핑백 담기</span>
                             </button>
                             <button className="button_wish">
-                                <div className="button_icon wish" />
+                                <div className="button_icon_wish" />
                                 <span>위시리스트</span>
                             </button>
                         </div>
@@ -131,25 +137,27 @@ const ItemPage = () => {
                         <span>최근본상품</span>
                         <span>1</span>
                     </div>
-                    <div className="side_box_img"></div>
+                    <div className="side_box_info">
+                        <img className="side_box_img" src={`${imageURI['ex']}`} />
+                    </div>
                     <div className="box_page">
-                        <button className="page_before"></button>
-                        <div className="page+num">
+                        <div className="page_before"></div>
+                        <div className="page_num">
                             <span>1</span>
                             <span>/1</span>
                         </div>
-                        <button className="page_after"></button>
+                        <div className="page_after"></div>
                     </div>
                 </div>
             </div>
             <div className="info_contents">
-                <div className="info_tit">
-                    <div className="info_tit1 big">상품 정보</div>
-                    <div className="info_tit2">연관 상품</div>
-                    <div className="info_tit3">상품평</div>
-                    <div className="info_tit4">반품/교환 안내</div>
+                <div className="info_tits">
+                    <div className="info_tit bigtit">상품 정보</div>
+                    <div className="info_tit">연관 상품</div>
+                    <div className="info_tit">상품평</div>
+                    <div className="info_tit">반품/교환 안내</div>
                 </div>
-                <div className="infomaition">
+                <div className="middle_info">
                     <div className="product_info">
                         <div className="product_tit">PRODUCT DETAIL</div>
                         <div className="product_img">
@@ -222,11 +230,11 @@ const ItemPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="info_tit">
-                <div className="info_tit1">상품 정보</div>
-                <div className="info_tit2 big">연관 상품</div>
-                <div className="info_tit3">상품평</div>
-                <div className="info_tit4">반품/교환 안내</div>
+            <div className="info_tits">
+                <div className="info_tit">상품 정보</div>
+                <div className="info_tit bigtit">연관 상품</div>
+                <div className="info_tit">상품평</div>
+                <div className="info_tit">반품/교환 안내</div>
             </div>
             <div className="relation">
                 <div className="rel_tit">
@@ -245,11 +253,11 @@ const ItemPage = () => {
                     </button>
                 </div>
             </div>
-            <div className="info_tit">
-                <div className="info_tit1">상품 정보</div>
-                <div className="info_tit2">연관 상품</div>
-                <div className="info_tit3 big">상품평</div>
-                <div className="info_tit4">반품/교환 안내</div>
+            <div className="info_tits">
+                <div className="info_tit">상품 정보</div>
+                <div className="info_tit">연관 상품</div>
+                <div className="info_tit bigtit">상품평</div>
+                <div className="info_tit">반품/교환 안내</div>
             </div>
             <div className="comment">
                 <button className="writing">삼풍평 작성하기</button>
@@ -283,11 +291,11 @@ const ItemPage = () => {
                     
                 </div>
             </div>
-            <div className="info_tit">
-                <div className="info_tit1">상품 정보</div>
-                <div className="info_tit2">연관 상품</div>
-                <div className="info_tit3">상품평</div>
-                <div className="info_tit4 big">반품/교환 안내</div>
+            <div className="info_tits">
+                <div className="info_tit">상품 정보</div>
+                <div className="info_tit">연관 상품</div>
+                <div className="info_tit">상품평</div>
+                <div className="info_tit bigtit">반품/교환 안내</div>
             </div>
             <div className="return">
                 <div className="re_tit">

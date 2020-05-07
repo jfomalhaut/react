@@ -1,11 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, Link, NavLink } from 'react-router-dom';
 import { Home, About, Shop, Outlet, Magazin, Event, Store, Login, Join, Search, Cart, ItemPage } from './Routers';
  // index.js가 routers폴더 안에 있으므로 Routers까지만 경로를 잡아주고 중괄호 안에 이름 그대로 넣어준다.
 import imageURI from './globals/imageURI';
 import './App.css';
 
-const App = () => {
+const App = ({ history }) => {
+    // const { params: { type } } = match;
+    const setMenu = val => {
+        history.push(`/shop/${val}`);
+    };
+
     return (
         <BrowserRouter>
                 <header>
@@ -55,7 +60,7 @@ const App = () => {
                                     </div>
                                 </li>
                                 <li className="shop_btn">
-                                    <Link to="/shop">
+                                    <Link to="/shop/all">
                                         SHOP
                                         <div className="shop_line" />
                                     </Link>
@@ -67,27 +72,39 @@ const App = () => {
                                                 </div>
                                                 <div className="h_dec shop">
                                                     <span className="dec1">
-                                                        ALL
+                                                        <NavLink to="/shop/all">
+                                                            ALL
+                                                        </NavLink>
                                                         <div className="dec_line i1" />
                                                     </span>
                                                     <span className="dec2">
-                                                        OUTER
+                                                        <NavLink to="/shop/outer">
+                                                            OUTER
+                                                        </NavLink>
                                                         <div className="dec_line i2" />
                                                     </span>
                                                     <span className="dec3">
-                                                        TOP
+                                                        <NavLink to="/shop/top">
+                                                            TOP
+                                                        </NavLink>
                                                         <div className="dec_line i3" />
                                                     </span>
                                                     <span className="dec4">
-                                                        BOTTOM
+                                                        <NavLink to="/shop/bottom">
+                                                            BOTTOM
+                                                        </NavLink>
                                                         <div className="dec_line i4" />
                                                     </span>
                                                     <span className="dec5">
-                                                        ACC
+                                                        <NavLink to="/shop/acc">
+                                                            ACC
+                                                        </NavLink>
                                                         <div className="dec_line i5" />
                                                     </span>
                                                     <span className="dec6">
-                                                        SUIT
+                                                        <NavLink to="/shop/suit">
+                                                            SUIT
+                                                        </NavLink>
                                                         <div className="dec_line i6" />
                                                     </span>
                                                 </div>

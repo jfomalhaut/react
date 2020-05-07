@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Shop.css';
 import { ShopItem, Footer, ShopItemDown } from '../../component';
 import imageURI from './../../globals/imageURI';
+// const ADD = 18;
+// const INITIAL_VALUE = 25;
 
 const SHOP_ITEMS = [ //상수:변경안됨
     {id: 1, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 1},
@@ -16,32 +18,37 @@ const SHOP_ITEMS = [ //상수:변경안됨
     {id: 10, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
     {id: 11, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
     {id: 12, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
-    {id: 13, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5}
+    {id: 13, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 14, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 15, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 16, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 17, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 18, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 19, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 20, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 21, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 22, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 23, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 24, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 25, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 26, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 27, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 28, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 29, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5},
+    {id: 30, name:'aaaaa', price: 1000, price2: 880, sale: '24%', src1: 'ex', type: 5}
 ];
 //SHOP_ITEMS는 변경안되는 전체값, sItem은 보여주기값 >> SHOP_ITEMS에서 필터줘서 sItem으로 보여지게 됨 sItem.map
 
 const Shop = ({ history, match }) => {
     const [sItem, setSItem] = useState([]);
-    const [isAll, setIsAll] = useState(false);
     const { params: { type } } = match;
 
-    const goItemPage = () => {
-        history.push("ItemPage");
-    }
-
     const setMenu = val => {
-        history.push(`/${val}`);
-        // console.log(val);
-        // if (val === 0) {
-        //     setSItem(SHOP_ITEMS);
-        //     return;
-        // }
-        // const after = SHOP_ITEMS.filter(item => item.type === val);
-        // setSItem(after);
+        history.push(`/shop/${val}`);
     };
 
-    const transType = val => {
-        switch (val) {
+    const transType = type => {
+        switch (type) {
             case 'all' : return 0;
             case 'outer' : return 1;
             case 'top' : return 2;
@@ -53,8 +60,6 @@ const Shop = ({ history, match }) => {
 
     useEffect(() => {
         const val = transType(type);
-
-        console.log(val);
        
         if (val === 0) {
             setSItem(SHOP_ITEMS);
@@ -62,14 +67,16 @@ const Shop = ({ history, match }) => {
         }
         const after = SHOP_ITEMS.filter(item => item.type === val);
         setSItem(after);
-        console.log(after);
     }, [type]);
 
+    useEffect(() => {
+        console.log(sItem);
+    }, [sItem]);
 
     return (
         <div className="container">
             <button className="btn_up"></button>
-            <div className="tit">
+            <div className="shop_tit">
                 <span>BEST</span>
             </div>
             <div className="category">
@@ -95,17 +102,10 @@ const Shop = ({ history, match }) => {
             </div>
             <div className="shop_all">
                 <div className="all_top">
-                    {SHOP_ITEMS.map((item, index) => (
-                        <ShopItem isAll={isAll} history={history} index={index} item={item} key={`SHOPI${item.id}`}
-                        onClick={goItemPage} />
+                    {sItem.map((item, index) => (
+                        <ShopItem category={type} index={index} item={item} key={`SHOPI${item.id}`}/>
                     ))}
                 </div>
-            </div>
-            <div className="all_down">
-                {SHOP_ITEMS.map((item, index) => (
-                    <ShopItemDown index={index} item={item} key={`SHOPI${item.id}`}
-                    onClick={goItemPage} />
-                ))}
             </div>
            <Footer />
         </div>
