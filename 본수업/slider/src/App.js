@@ -6,6 +6,8 @@ import Pagination from './routers/Pagination';
 import Scroll1 from './routers/Scroll1';
 import Scroll2 from './routers/Scroll2';
 import Segment from './routers/Segment';
+import Event2 from './routers/Event';
+import Event3 from './routers/Event3';
 
 function App() {
   const setting = {
@@ -44,7 +46,9 @@ function App() {
           <Route path="/scroll1" exact component={Scroll1} />
           <Route path="/scroll2" exact component={Scroll2} />
           <Route path="/segment" exact component={Segment} />
-          <Redirect to="segment"/>
+          <Route path="/event" exact component={Event2} />
+          <Route path="/event3" exact component={Event3} />
+          <Redirect to="event"/>
         </Switch>
       </BrowserRouter>
     </div>

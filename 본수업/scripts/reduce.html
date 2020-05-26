@@ -1,0 +1,19 @@
+<html>
+<head></head>
+<body>
+	<script>
+		const arr = [1,2,3,4,5]; // 15
+		const data = [];
+		let total = 0;
+		for (let i in arr) {
+			total = total + arr[i];
+		}
+
+		// acc : 초기의 값
+		// cur : 현재의 값
+		const newArr = arr.reduce((acc, cur, idx) => {
+			return acc + cur;
+		}, 0);
+	</script>
+</body>
+</html>
