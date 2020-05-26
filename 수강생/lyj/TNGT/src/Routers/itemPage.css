@@ -1,4 +1,4 @@
-*{ margin: 0px; padding: 0px; list-style: none; letter-spacing: 1px;}
+*{ margin: 0px; padding: 0px; list-style: none; letter-spacing: 0px;}
 .item_container{
     width: 940px;
     margin: 0 auto;
@@ -6,9 +6,11 @@
 .contents{
     width: 100%;
     padding: 130px 0px 0px 0px;
+    position: relative;
 }
 .cont_tit{
     width: 100%;
+    margin: 0px 0px 15px 0px;
 }
 .cont_tit span{
     font-size: 15px;
@@ -96,10 +98,10 @@
 .info_box{
     width: 100%;
     border: 1px solid #ddd;
+    padding: 28px 23px;
 }
 .bo1{
     border-top: 1px solid black;
-    padding: 28px 23px;
 }
 .info_line1{
     width: 100%;
@@ -109,6 +111,7 @@
 .sale_tit{
     font-weight: bold;
     display: inline-block;
+    color: #333333;
 }
 .price_boxes{
     float: right;
@@ -119,6 +122,9 @@
 }
 .won{
     color: #AAAAAA;
+}
+.sub_title{
+    margin: 0px 164px 0px 0px;
 }
 .sale_price{
     color: #555555;
@@ -133,12 +139,13 @@
 .sub_title button{
     /* width: 58px;
     height: 22px; */
+    letter-spacing: -1px;
     padding: 4px 7px;
     color: 11px;
     text-align: center;
     border: 1px solid #ddd;
     background: white;
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 7px;
 }
 .sale_price{
     display: flex;
@@ -146,7 +153,273 @@
 }
 .sale_pre{
     color: #aaaaaa;
+    font-weight: 500;
 }
 .sale_price{
     color: #555555;
+}
+.bo2{
+    font-size: 14px;
+}
+.add_tit{
+    font-weight: bold;
+    margin: 0px 0px 15px 0px;
+    color: #333333;
+}
+.bo2 button{
+    letter-spacing: -1px;
+    padding: 4px 7px;
+    color: 11px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: white;
+    margin: 0px 0px 0px 7px;
+}
+.card_box{
+    margin: 0px 0px 5px 0px;
+}
+.card_box span{
+    line-height: 28.5px;
+}
+.mileage_box span{
+    line-height: 28.5px;
+}
+.bo3{
+    font-size: 14px;
+}
+.dtitle{
+    width: 110px !important;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color: #333333;
+}
+.red_text{
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+.line2{
+    margin: 7px 0px;
+}
+.line4{
+    margin: 7px 0px 0px 0px;
+}
+.title_boxx span:nth-child(2){
+    width: 300px;
+    float: right;
+}
+.line2 span:nth-child(2){
+    width: 300px;
+    float: right;
+}
+.line3 span:nth-child(2){
+    width: 300px;
+    float: right;
+}
+.line4 span:nth-child(2){
+    width: 300px;
+    float: right;
+}
+.bo4{
+    font-size: 14px;
+    color: #333333;
+}
+.colors{
+    display: flex;
+    margin: 0px 0px 7px 0px;
+}
+.colors span{
+    width: 100px !important;
+}
+.color_boxes{
+    display: flex;
+}
+.color_boxes li{
+    width: 21px;
+    height: 21px;
+    margin: 0px 5px 0px 0px;
+}
+.sizes{
+    display: flex;
+    margin: 0px 0px 7px 0px;
+}
+.size_tit{
+    width: 100px !important;
+}
+.size_box{
+    width: 190px;
+}
+.sizes button{
+    font-size: 12px;
+    letter-spacing: -1px;
+    padding: 4px 7px;
+    color: 11px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: white;
+    margin: 0px 7px 7px 0px;
+}
+.size_table button{
+    width: 95px;
+    height: 26px;
+    font-size: 12px;
+    margin: 0px 0px 0px 20px;
+}
+.amounts{
+    display: flex;
+}
+.amount_tit{
+    width: 100px !important;
+}
+.amounts select{
+    width: 95px;
+    height: 20px;
+}
+
+.button_box{
+    width: 458px;
+    margin: 17px 0px 0px 0px;
+}
+.button_buy{
+    width: 149px;
+    height: 45px;
+    background: #000000;
+    color: white;
+    border: 1px solid #ddd;
+    margin: 0px 4px 0px 0px;
+    cursor: pointer;
+}
+.button_icon_buy{
+    width: 30px;
+    height: 30px;
+    background-image: url("../../assets/iconss.png");
+    background-position: -164px -204px;
+    z-index: 80;
+    display: inline-block;
+    vertical-align: middle;
+}
+.button_cart{
+    width: 149px;
+    height: 45px;
+    background: #ffffff;
+    color: black;
+    border: 1px solid #ddd;
+    margin: 0px 4px 0px 0px;
+    cursor: pointer;
+}
+.button_icon_cart{
+    width: 30px;
+    height: 30px;
+    background-image: url("../../assets/iconss.png");
+    background-position: -194px -204px;
+    z-index: 80;
+    display: inline-block;
+    vertical-align: middle;
+}
+.button_wish{
+    width: 149px;
+    height: 45px;
+    background: #ffffff;
+    color: black;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.button_icon_wish{
+    width: 30px;
+    height: 30px;
+    background-image: url("../../assets/iconss.png");
+    background-position: -224px -204px;
+    z-index: 80;
+    display: inline-block;
+    vertical-align: middle;
+}
+.side_box{
+    width: 100px;
+    height: 494px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    display: inline-block;
+    position: absolute;
+    top: 140px;
+    right: -150px;
+}
+.side_box_tit{
+    width: 82px;
+    height: 20px;
+    padding: 9px;
+    background: #666666;
+    color: white;
+    font-size: 11px;
+}
+.side_box_tit span:nth-child(2){
+    float: right;
+}
+.side_box_info{
+    height: 400px;
+    padding: 9px;
+}
+.side_box_img{
+    width: 74px;
+    height: 94px;
+    vertical-align: top;
+    padding: 4px;
+}
+.box_page{
+    height: 35px;
+    display: flex;
+    padding: 0px 9px;
+    text-align: center;
+}
+.page_before{
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+    background-image: url("../../assets/iconss.png");
+    background-position: -46px -26px;
+    line-height: 30px;
+    position: absolute;
+    top: 467.5px;
+    right: 80px;
+}
+.page_num{
+    width: 100%;
+    line-height: 30px;
+}
+.page_after{
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+    background-image: url("../../assets/iconss.png");
+    background-position: -54px -26px;
+    position: absolute;
+    top: 467.5px;
+    right: 15px;
+}
+
+/* ///////// 중간 ////////// */
+.info_contents{
+    width: 100%;
+    margin: 25px 0px 0px 0px;
+}
+.info_tits{
+    display: flex;
+}
+.info_tit{
+    width: 234px;
+    height: 34px;
+    background: #999999;
+    color: white;
+    border: 1px solid black;
+    line-height: 34px;
+    text-align: center;
+}
+.bigtit{
+    height: 41px;
+    background: #F4F4F4;
+    color: #030303;
+    border-bottom: 0px;
+}
+.middle_info{
+    margin: 30px 0px 0px 0px;
 }

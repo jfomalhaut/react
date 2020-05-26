@@ -9,7 +9,7 @@ import Login from './Login/Login';
 import Join from './Join/Join';
 import Search from './Search/Search';
 import Cart from './Cart/Cart';
-import ItemPage from './itemPage';
+import ItemPage from '../Routers/itemPage';
 
 export {
     Home,

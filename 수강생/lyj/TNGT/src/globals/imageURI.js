@@ -59,6 +59,7 @@ const imageURI = {
     coma: require ('../../assets/icon_sns_story.png').default,
     facebook: require ('../../assets/icon_sns_facebook.png').default,
     url: require ('../../assets/icon_sns_url.png').default,
+    itemColor: require ('../../assets/item_color.jpg').default,
 };
 
 export default imageURI;

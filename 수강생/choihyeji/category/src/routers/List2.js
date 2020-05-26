@@ -83,7 +83,7 @@ const List2 = ({ history, match: { params: { category }} }) => {
             
                 <div className="items">
                     {view.map(item => (
-                        <Item key={`ITEM${item.id}`} item={item}/>
+                        <Item key={`ITEM${item.id}`} item={item} />
                     ))}
                 </div>
             )}

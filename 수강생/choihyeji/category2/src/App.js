@@ -1,15 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import List from './routers/List';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
     return (
-        <BrowserRouter>
+       <BrowserRouter>
             <Switch>
-                <Route exact path="/:category" component={List} />
-                <Redirect path="*" to="/all" />
+                <Route path="/:category" exact component={List} />
+                <Redirect path="*" to="/all" /> 
             </Switch>
-        </BrowserRouter>
+       </BrowserRouter>
     );
 };
 

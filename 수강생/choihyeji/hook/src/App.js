@@ -7,7 +7,7 @@ import Corona from './routers/Corona';
 
 const App = () => {
     return (
-        <Corona />
+        <List2 />
     );
 };
 
