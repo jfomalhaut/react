@@ -18,6 +18,14 @@ const CartReducer = (state, {type, data}) => {
 			state.cart = [];
 			return { ... state };
 		}
+
+		case 'SET_COUNT': {
+			const after = state.cart.map(item => (
+				item.id === data.id ? ({ ...item, count: data.count }) : item
+			));
+			state.cart = after;
+			return {...state};
+		}
 	}
 };
 
