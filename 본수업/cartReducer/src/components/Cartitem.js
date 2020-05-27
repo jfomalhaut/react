@@ -9,17 +9,22 @@ const CartItem = ({ item }) => {
 		dispatch({ type: 'SET_COUNT', data: {...item, count: Number(value)}});
 	};
 
+	const remove = () => {
+		dispatch({ type: 'REMOVE_ITEM', data: { id: item.id } });
+	};
+
 	return (
 		<div key={`CARTITEM${item.id}`}>
 			<div>{item.name}</div>
 			<div>Unit Price : {item.price}</div>
-			<div>total amount: {item.price * item.count}</div>
+			<div>Amount: {item.price * item.count}</div>
 			<select value={item.count} onChange={onChangeCount}>
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
 				<option>4</option>
 			</select>
+			<button onClick={remove}>Delete</button>
 		</div>
 	);
 };

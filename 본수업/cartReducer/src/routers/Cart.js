@@ -10,7 +10,7 @@ const Cart = () => {
 	};
 
 	useEffect(() => {
-		const _totalAmount = state.cart.reduce((acc, cur, idx) => {
+		const _totalAmount = state.cart.reduce((acc, cur) => {
 			acc = acc + cur.price * cur.count;
 			return acc;
 		}, 0);
@@ -19,14 +19,16 @@ const Cart = () => {
 
 	return (
 		<div>
-			<h1>Cart Component</h1>
+			<hr/>
+			<button onClick={removeAll}>전체삭제</button>
+			<hr/>
 			<div className="list">
 				{state.cart.map(item => (
 					<CartItem key={`CARTITEM${item.id}`} item={item} />
 				))}
-				<button onClick={removeAll}>전체삭제</button>
-				<h1>합계 : {totalAmount}원</h1>
 			</div>
+			<hr/>
+			<h1>Total Amount : {totalAmount}원</h1>
 		</div>
 	);
 };

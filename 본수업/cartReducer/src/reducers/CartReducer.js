@@ -26,6 +26,12 @@ const CartReducer = (state, {type, data}) => {
 			state.cart = after;
 			return {...state};
 		}
+		
+		case 'REMOVE_ITEM': {
+			const after = state.cart.filter(item => item.id !== data.id);
+			state.cart = after;
+			return { ...state };
+		}
 	}
 };
 
