@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import AppContext from '../contexts/AppContext';
+import React, { useState } from 'react';
+import ListItem from '../components/ListItem';
 
 const ITEMS = [
 	{id: 1, name: 'item1', price: 1000},
@@ -13,23 +13,13 @@ const ITEMS = [
 ];
 
 const List = () => {
-	const { state, dispatch } = useContext(AppContext);
-	
-	const onCart = item => {
-		dispatch({ type: 'ADD_CART', data: item});
-	};
 
 	return (
 		<div>
 			<h1>List Component</h1>
 			<div className="list">
 				{ITEMS.map(item => (
-					<div key={`ITEM${item.id}`} style={{ margin: '20px 0' }}>
-						<h2>{item.name}</h2>
-						<button onClick={() => onCart(item)}>
-							<h1>담기</h1>
-						</button>
-					</div>
+					<ListItem item={item} key={`ITEM${item.id}`}/>
 				))}
 			</div>
 		</div>

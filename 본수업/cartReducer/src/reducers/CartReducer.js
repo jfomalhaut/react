@@ -3,13 +3,20 @@ const CartReducer = (state, {type, data}) => {
 		case 'ADD_CART': {
 			const flag = state.cart.some(item => item.id === data.id);
 			let after = [];
+
 			if (flag) { // 장바구니에 이미 담겨 있는 경우
 				after = state.cart.map(item => (
-					item.id === data.id ? ({ ...item, count: item.count + 1}) : item
+					item.id === data.id ? ({ ...item, count: item.count + data.count}) : item
 				));
 			} else { // 장바구니에 해당 상품이 없는 경우
-				after = state.cart.concat({...data, count: 1, check: false });
+				after = state.cart.concat({...data, check: false });
 			}
+			state.cart = after;
+			return { ...state };
+		}
+
+		case 'REMOVE_CHECK': {
+			const after = state.cart.filter(item => !item.chcek);
 			state.cart = after;
 			return { ...state };
 		}
